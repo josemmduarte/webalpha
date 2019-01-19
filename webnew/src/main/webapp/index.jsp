@@ -20,7 +20,7 @@
 			<!-- -->
 			<!-- -->
 
-			<form role="form" method="post" action="">
+			<form role="form" method="post" action="ValidarUsuario">
 				<div class="form-group">
 					<label for="usuario">Usuario</label> <input
 						type="text" class="form-control" id="usuario" name="usuario"
