@@ -7,36 +7,53 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 <title>Amiibo</title>
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<!-- -->
-			<!-- -->
+		<div class="row justify-content-center">
+			<h1>Web Amiibo</h1>
+		</div>
+		<div class="row justify-content-center">
+			<%
+				String error = request.getParameter("mensaje");
+				if (error != null) {
+			%>
+			<div class="alert alert-warning alert-dismissible fade show"
+				role="alert">
+				<%
+					out.print(error);
+				%>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<%
+				}
+			%>
+		</div>
 
+		<div class="row justify-content-center">
 			<form role="form" method="post" action="ValidarUsuario">
 				<div class="form-group">
-					<label for="usuario">Usuario</label> <input
-						type="text" class="form-control" id="usuario" name="usuario"
+					<label for="usuario">Usuario</label> <input type="text"
+						class="form-control" id="usuario" name="usuario"
 						aria-describedby="usuarioHelp" autofocus required="required">
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label> <input
-						type="password" class="form-control" id="password" name="password"
+					<label for="password">Password</label> <input type="password"
+						class="form-control" id="password" name="password"
 						required="required">
 				</div>
-				<button type="submit" class="btn btn-primary">Enviar</button>
-				<button type="button" class="btn btn-secondary">Registrar</button>
+				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i> Enviar</button>
+				<button type="button" class="btn btn-secondary"><i class="fas fa-user-plus"></i> Registrar</button>
 			</form>
 
-			<!-- -->
-			<!-- -->
 		</div>
 	</div>
 
