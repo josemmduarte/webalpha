@@ -2,7 +2,7 @@ package es.cj.bean;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
 
 	private int idUsuario;
 	private String login;
@@ -10,9 +10,18 @@ public class Usuario implements Serializable{
 	private String nombre;
 	private String email;
 	private int tipo;
-	
+
 	public Usuario() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Usuario(String login, String password, String nombre, String email, int tipo) {
+		super();
+		this.login = login;
+		this.password = password;
+		this.nombre = nombre;
+		this.email = email;
+		this.tipo = tipo;
 	}
 
 	public Usuario(int idUsuario, String login, String password, String nombre, String email, int tipo) {
@@ -78,6 +87,5 @@ public class Usuario implements Serializable{
 		return "Usuario [idUsuario=" + idUsuario + ", login=" + login + ", password=" + password + ", nombre=" + nombre
 				+ ", email=" + email + ", tipo=" + tipo + "]";
 	}
-	
-	
+
 }

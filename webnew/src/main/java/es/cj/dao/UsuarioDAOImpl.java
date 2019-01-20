@@ -9,7 +9,7 @@ import es.cj.bean.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
 
-	private String passBD = "webCJ2019";
+	private String passBD = "LibrosCJ2019";
 	
 	public Usuario comprobarUsuario(String login, String password, Conexion c) {
 		Usuario u = null;
@@ -20,14 +20,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			sentencia.setString(1, login);
 			sentencia.setString(2, password);
 			sentencia.setString(3, passBD);
-			
+			// Ejecutamos la consulta
 			ResultSet resultado = sentencia.executeQuery();
 			if (resultado.next()) {
-				u = new Usuario(resultado.getInt("idUsuario"),
-						resultado.getString("login"),
-						resultado.getString("password"),
-						resultado.getString("nombre"),
-						resultado.getString("email"),
+				u = new Usuario(resultado.getInt("idUsuario"), 
+						resultado.getString("login"), 
+						resultado.getString("password"), 
+						resultado.getString("nombre"), 
+						resultado.getString("email"), 
 						resultado.getInt("tipo"));
 			}
 		} catch (SQLException e) {
@@ -75,4 +75,7 @@ boolean existe = false;
 		
 		return existe;
 	}
+
+
+
 }

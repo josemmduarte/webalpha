@@ -18,15 +18,34 @@
 <title>Registrar</title>
 </head>
 <body>
-	<div id="container">
+	<div class="container">
 		<div class="row justify-content-center">
 			<h1>Registro</h1>
+		</div>
+		<div class="row justify-content-center">
+			<%
+				String error = request.getParameter("mensaje");
+				if (error != null) {
+			%>
+			<div class="alert alert-warning alert-dismissible fade show"
+				role="alert">
+				<%
+					out.print(error);
+				%>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<%
+				}
+			%>
 		</div>
 		<hr>
 		<form class="form" method="post" action="../RegistrarUsuario" onsubmit="return validarFormulario()">
 			<div class="form-group">
 				<label class="control-label" for="login">Login</label>
-				<input type="text" id="login" name="login" class="form-control" >
+				<input type="text" id="login" name="login" class="form-control">
 				<span id="splogin" style="color: red"></span>
 			</div>
 			<div class="form-group">
@@ -40,13 +59,13 @@
 			<div class="form-group">
 				<label class="control-label" for="email">Email</label>
 				<input type="email" id="email" name="email" class="form-control" >
+				<span id="spemail" style="color: red"></span>
 			</div>
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary" value="Enviar">
+				<input type="submit" class="btn btn-primary btn-block" value="Enviar">
 			</div>
 		</form>
 	</div>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../js/jquery-3.3.1.slim.min.js"></script>
