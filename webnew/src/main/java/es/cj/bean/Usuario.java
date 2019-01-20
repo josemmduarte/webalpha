@@ -9,13 +9,13 @@ public class Usuario implements Serializable{
 	private String password;
 	private String nombre;
 	private String email;
-	private String tipo;
+	private int tipo;
 	
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int idUsuario, String login, String password, String nombre, String email, String tipo) {
+	public Usuario(int idUsuario, String login, String password, String nombre, String email, int tipo) {
 		super();
 		this.idUsuario = idUsuario;
 		this.login = login;
@@ -65,11 +65,11 @@ public class Usuario implements Serializable{
 		this.email = email;
 	}
 
-	public String getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 

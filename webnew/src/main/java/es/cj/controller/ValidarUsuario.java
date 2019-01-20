@@ -59,7 +59,6 @@ public class ValidarUsuario extends HttpServlet {
 			response.sendRedirect("index.jsp?mensaje=Usuario y/o Password Incorrecto");
 		}
 	}
-
 }
 
 
