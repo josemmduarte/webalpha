@@ -20,7 +20,7 @@
   	<param-name>driver</param-name>
   	<param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
-  <servlet>
+   <servlet>
   	<servlet-name>ValidarUsuario</servlet-name>
   	<display-name>ValidarUsuario</display-name>
   	<description></description>
