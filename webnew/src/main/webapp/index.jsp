@@ -11,12 +11,12 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<title>Amiibo</title>
+<title>PlanetDeviluke</title>
 </head>
 <body>
 	<div class="container">
 		<div class="row justify-content-center">
-			<h1>Web Amiibo</h1>
+			<h1>Planet Deviluke</h1>
 		</div>
 		<div class="row justify-content-center">
 			<%
@@ -51,7 +51,7 @@
 						required="required">
 				</div>
 				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i> Enviar</button>
-				<button type="button" class="btn btn-secondary"><i class="fas fa-user-plus"></i> Registrar</button>
+				<button type="button" class="btn btn-secondary" onclick="location.href='jsp/registrar.jsp'"><i class="fas fa-user-plus"></i> Registrar</button>
 			</form>
 
 		</div>
