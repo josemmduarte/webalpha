@@ -42,7 +42,7 @@
 			%>
 		</div>
 		<hr>
-		<form class="form" method="post" action="../RegistrarUsuario" onsubmit="return validarFormulario()">
+		<form class="form" method="post" action="../Registrar" onsubmit="return validarFormulario()">
 			<div class="form-group">
 				<label class="control-label" for="login">Login</label>
 				<input type="text" id="login" name="login" class="form-control">
