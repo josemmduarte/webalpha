@@ -76,6 +76,28 @@ boolean existe = false;
 		return existe;
 	}
 
+	public int insertar(Usuario usuario, Conexion con) {
+		int filas = 0;
+		
+		String sql = "INSERT INTO usuarios VALUES (null, ?, AES_ENCRYPT(?, ?), ?, ?, ?)";
+		try {
+			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+			sentencia.setString(1, usuario.getLogin());
+			sentencia.setString(2, usuario.getPassword());
+			sentencia.setString(3, passBD);
+			sentencia.setString(4, usuario.getNombre());
+			sentencia.setString(5, usuario.getEmail());
+			sentencia.setInt(6, usuario.getTipo());
+			filas = sentencia.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return filas;
+	}
+
 
 
 }

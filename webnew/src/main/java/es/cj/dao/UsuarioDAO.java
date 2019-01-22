@@ -10,4 +10,6 @@ public interface UsuarioDAO {
 	public boolean existeLogin(String login, Conexion c);
 	
 	public boolean existeEmail(String email, Conexion c);
+
+	public int insertar(Usuario usuario, Conexion con);
 }

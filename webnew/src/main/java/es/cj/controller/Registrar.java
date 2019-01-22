@@ -60,7 +60,13 @@ public class Registrar extends HttpServlet {
 		
 		if (!uDAO.existeLogin(login, con)) {
 			if (!uDAO.existeEmail(email, con)) {
-				
+				int filas = uDAO.insertar(usuario, con);
+				if (filas == 1) {
+					// Correcto
+					response.sendRedirect("jsp/registrar.jsp?mensaje=Usuario registrado correctamente");
+				} else {
+					response.sendRedirect("jsp/registrar.jsp?mensaje=Error al registrar al usuario");
+				}
 			} else {
 				response.sendRedirect("jsp/registrar.jsp?mensaje=Email registrado en la BD");
 			}
