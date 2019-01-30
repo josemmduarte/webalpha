@@ -10,7 +10,7 @@
   </context-param>
   <context-param>
   	<param-name>password</param-name>
-  	<param-value>Admin2018</param-value>
+  	<param-value>Admin2019</param-value>
   </context-param>
   <context-param>
   	<param-name>database</param-name>
