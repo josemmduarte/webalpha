@@ -10,4 +10,5 @@ public interface LibroDAO {
 
 	List<Libro> listar(Conexion c, Usuario u);
 	
+	byte [] obtenerPortada(Conexion c, int idLibro);
 }

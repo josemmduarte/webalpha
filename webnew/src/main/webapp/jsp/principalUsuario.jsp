@@ -1,3 +1,7 @@
+<%@page import="es.cj.bean.Libro"%>
+<%@page import="java.util.List"%>
+<%@page import="es.cj.dao.LibroDAO"%>
+<%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.bean.Conexion"%>
 <%@page import="es.cj.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -18,7 +22,7 @@
 <title>Principal Usuario</title>
 </head>
 <body>
-	<div class="container">
+	
 		<% 
 			if(session.getAttribute("usuarioWeb") == null || session.isNew()){
 				response.sendRedirect("../index.jsp?mensaje=Error de sesion");
@@ -33,13 +37,36 @@
 				// Crear un objeto de tipo Conexion con los datos anteriores
 				Conexion con = new Conexion(usu, pass, driver, bd);
 				
-				
-			}
+				LibroDAO lDAO = new LibroDAOImpl();
+				List<Libro> libros = lDAO.listar(con, (Usuario)session.getAttribute("usuarioWeb"));
+			
 		%>
+	<div class="container">
+		<p>
+			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block">Añadir Libro</a>
+		</p>
 		
-
-		Hola <%=((Usuario)session.getAttribute("usuarioWeb")).getNombre() %>
-
+		<div class="row col-md-12 text-center">
+			<% 
+				for (Libro l:libros){
+				%>
+					<div class="card" style="margin: 10px">
+						<img alt="imagen de libro" src="img.jsp?idLibro=<%=l.getIdLibro() %>" 
+							class="card-img-top" style="width: 300px; height: 100px">
+						<div class="card-body">
+							<h5 class="card-title"><%=l.getTitulo() %></h5>
+							<p class="card-text"><%=l.getAutor() %></p>
+							<p class="card-text"><small class="text-muted"><%=l.getIsbn() %></small></p>
+							<button type="button" class="btn btn-default" onclick="">Actualizar</button>
+							<button type="button" class="btn btn-danger" onclick="">Borrar</button>
+						</div>
+					</div>
+				<%}
+			%>
+		</div>
+		
+		<% } %>
+		
 	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
