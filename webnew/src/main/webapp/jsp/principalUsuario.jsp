@@ -46,7 +46,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario)session.getAttribute("usuarioWeb")).getNombre() %></li>
 			<li class="breadcrumb-item">Principal Usuario</li>
-			<li class="breadcrumb-item text-danger"></li>
+			<li class="breadcrumb-item text-danger"><a href="../CerrarSesion">Cerrar Sesion</a></li>
 		</ol>
 	
 		<p>
