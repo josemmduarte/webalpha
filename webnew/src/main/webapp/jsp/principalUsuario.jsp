@@ -42,6 +42,13 @@
 			
 		%>
 	<div class="container">
+	
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Bienvenido <%((Usuario)session.getAttribute("usuarioWeb")).getNombre() %></li>
+			<li class="breadcrumb-item"></li>
+			<li class="breadcrumb-item"></li>
+		</ol>
+	
 		<p>
 			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block">Añadir Libro</a>
 		</p>
@@ -51,7 +58,7 @@
 				for (Libro l:libros){
 				%>
 					<div class="card" style="margin: 10px">
-						<img alt="imagen de libro" src="img.jsp?idLibro=<%=l.getIdLibro() %>" 
+						<img alt="imagen de libro" src="image.jsp?idLibro=<%=l.getIdLibro() %>" 
 							class="card-img-top" style="width: 300px; height: 100px">
 						<div class="card-body">
 							<h5 class="card-title"><%=l.getTitulo() %></h5>
