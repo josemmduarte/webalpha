@@ -44,9 +44,9 @@
 	<div class="container">
 	
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%((Usuario)session.getAttribute("usuarioWeb")).getNombre() %></li>
-			<li class="breadcrumb-item"></li>
-			<li class="breadcrumb-item"></li>
+			<li class="breadcrumb-item">Bienvenido <%=((Usuario)session.getAttribute("usuarioWeb")).getNombre() %></li>
+			<li class="breadcrumb-item">Principal Usuario</li>
+			<li class="breadcrumb-item text-danger"></li>
 		</ol>
 	
 		<p>
