@@ -56,4 +56,16 @@ public class LibroDAOImpl implements LibroDAO {
 		return imagen;
 	}
 
+	public void borrar(Conexion c, String uuid) {
+		String sql = "DELETE FROM libros WHERE uuid = ?";
+		try {
+			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
+			sentencia.setString(1, uuid);
+			sentencia.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }
