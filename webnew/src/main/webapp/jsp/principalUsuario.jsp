@@ -70,16 +70,16 @@
 		</ol>
 
 		<p>
-			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block">Añadir
+			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" >Añadir
 				Libro</a>
 		</p>
 
-		<div class="row col-md-12 text-center">
+		<div class="row col-md-12 text-center" >
 			<%
 				for (Libro l : libros) {
 			%>
 
-			<div class="card" style="margin: 10px" >
+			<div class="card" style="margin: 10px " >
 				<img alt="imagen de libro"
 					src="image.jsp?idLibro=<%=l.getIdLibro()%>" class="card-img-top"
 					style="width: 250px; height: 350px">
