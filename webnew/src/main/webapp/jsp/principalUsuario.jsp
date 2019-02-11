@@ -68,8 +68,17 @@
 			<li class="breadcrumb-item">Principal Usuario</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
+				
+				<div id="navegador">
+                <ul>
+                    <li><a href="inicio.php">Inicio</a></li>
+                    <li><a href="Insertar.php">Insertar</a></li>
+                    <li><a href="Visualizar.php">Visualizar</a></li>
+                    <li><a href="Editar.php">Editar</a></li>
+                </ul>
+        </div>
 		</ol>
-
+		
 		<p>
 			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" 
 			style="background-color:#8258FA; border-color:#8258FA;">Añadir Manga</a>
