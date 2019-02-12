@@ -109,14 +109,14 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Borrar Libro</h5>
+									<h5 class="modal-title" id="exampleModalLabel">Borrar Manga</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">×</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									¿Desea borrar el libro <%=l.getTitulo() %>?
+									¿Desea borrar el Tomo: <%=l.getTitulo() %>?
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary"
