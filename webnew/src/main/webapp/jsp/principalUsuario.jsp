@@ -5,7 +5,7 @@
 <%@page import="es.cj.bean.Conexion"%>
 <%@page import="es.cj.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+		pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -76,7 +76,7 @@
                     <li><a href="Visualizar.php">Visualizar</a></li>
                     <li><a href="Editar.php">Editar</a></li>
                 </ul>
-        </div>
+        		</div>
 		</ol>
 		
 		<p>
@@ -101,7 +101,7 @@
 					</p>
 					<button type="button" class="btn btn-default" onclick="">Actualizar</button>
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
-						data-target="modalBorrar<%=l.getIdLibro()%>">Borrar</button>
+						data-target="#modalBorrar<%=l.getIdLibro()%>">Borrar</button>
 					<!-- Modal -->
 					<div class="modal fade" id="modalBorrar<%=l.getIdLibro()%>" tabindex="-1"
 						role="dialog" aria-labelledby="exampleModalLabel"

@@ -45,9 +45,9 @@ public class BorrarLibro extends HttpServlet {
 		Conexion con = new Conexion(usu, pass, driver, bd);
 
 		LibroDAO lDAO = new LibroDAOImpl();
-		
+
 		lDAO.borrar(con, uuid);
-		
+
 		response.sendRedirect("jsp/principalUsuario.jsp");
 	}
 
