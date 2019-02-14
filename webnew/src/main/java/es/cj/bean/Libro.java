@@ -15,6 +15,16 @@ public class Libro implements Serializable {
 	public Libro() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Libro(String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
+		super();
+		this.titulo = titulo;
+		this.autor = autor;
+		this.isbn = isbn;
+		this.portada = portada;
+		this.uuid = uuid;
+		this.idUsuario = idUsuario;
+	}
 
 	public Libro(int idLibro, String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
 		super();
