@@ -72,8 +72,8 @@ public class AnadirLibro extends HttpServlet {
 
 			// Escalar la imagen
 			BufferedImage imageBuffer = ImageIO.read(inputS);
-			Image tmp = imageBuffer.getScaledInstance(250, 350, BufferedImage.SCALE_FAST);
-			BufferedImage buffered = new BufferedImage(250, 350, BufferedImage.TYPE_INT_RGB);
+			Image tmp = imageBuffer.getScaledInstance(400, 563, BufferedImage.SCALE_FAST);
+			BufferedImage buffered = new BufferedImage(400, 563, BufferedImage.TYPE_INT_RGB);
 			buffered.getGraphics().drawImage(tmp, 0, 0, null);
 
 			os = new ByteArrayOutputStream();

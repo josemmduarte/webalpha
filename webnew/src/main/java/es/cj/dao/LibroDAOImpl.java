@@ -68,4 +68,22 @@ public class LibroDAOImpl implements LibroDAO {
 		}
 	}
 
+	public void insertar(Conexion con, Libro lib) {
+		String sql = "INSERT INTO libros VALUES (null, ?, ?, ?, ?, ?, ?)";
+		try {
+			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+			sentencia.setString(1, lib.getTitulo());
+			sentencia.setString(2, lib.getAutor());
+			sentencia.setInt(3, lib.getIsbn());
+			sentencia.setBytes(4, lib.getPortada());
+			sentencia.setInt(5, lib.getIdUsuario());
+			sentencia.setString(6, lib.getUuid());
+			
+			sentencia.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
 }
