@@ -86,4 +86,54 @@ public class LibroDAOImpl implements LibroDAO {
 		}
 	}
 
+	public Libro obtenerLibroPorUUID(Conexion con, String uuid) {
+		Libro laux = new Libro();
+		
+		String sql = "SELECT * FROM libros WHERE uuid = ?";
+		try {
+			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+			sentencia.setString(1, uuid);
+			ResultSet resultado = sentencia.executeQuery();
+			while (resultado.next()) {
+				laux = new Libro(
+						resultado.getInt("idLibro"), 
+						resultado.getString("titulo"), 
+						resultado.getString("autor"), 
+						resultado.getInt("isbn"), 
+						resultado.getBytes("portada"), 
+						resultado.getString("uuid"), 
+						resultado.getInt("idUsuario"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return laux;
+	}
+
+	public void actualizar(Conexion con, Libro lib) {
+		try {
+			if (lib.getPortada() != null) {
+				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=?, portada=? WHERE uuid=?";
+				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+				sentencia.setString(1, lib.getTitulo());
+				sentencia.setString(2, lib.getAutor());
+				sentencia.setInt(3, lib.getIsbn());
+				sentencia.setBytes(4, lib.getPortada());
+				sentencia.setString(5, lib.getUuid());
+				sentencia.executeUpdate();
+			} else {
+				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=? WHERE uuid=?";
+				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+				sentencia.setString(1, lib.getTitulo());
+				sentencia.setString(2, lib.getAutor());
+				sentencia.setInt(3, lib.getIsbn());
+				sentencia.setString(4, lib.getUuid());
+				sentencia.executeUpdate();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 }

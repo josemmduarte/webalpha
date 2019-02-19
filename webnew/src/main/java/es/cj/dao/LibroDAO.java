@@ -15,4 +15,8 @@ public interface LibroDAO {
 	void borrar(Conexion c, String uuid);
 
 	void insertar(Conexion con, Libro lib);
+	
+	Libro obtenerLibroPorUUID(Conexion con, String uuid);
+
+	void actualizar(Conexion con, Libro lib);
 }

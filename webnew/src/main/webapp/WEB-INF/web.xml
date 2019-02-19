@@ -10,7 +10,7 @@
   </context-param>
   <context-param>
   	<param-name>password</param-name>
-  	<param-value>Admin2018</param-value>
+  	<param-value>Admin2019</param-value>
   </context-param>
   <context-param>
   	<param-name>database</param-name>
@@ -56,6 +56,12 @@
   	<description></description>
   	<servlet-class>es.cj.controller.AnadirLibro</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditarLibro</servlet-name>
+  	<display-name>EditarLibro</display-name>
+  	<description></description>
+  	<servlet-class>es.cj.controller.EditarLibro</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ValidarUsuario</servlet-name>
   	<url-pattern>/ValidarUsuario</url-pattern>
@@ -79,6 +85,10 @@
   <servlet-mapping>
   	<servlet-name>AnadirLibro</servlet-name>
   	<url-pattern>/AnadirLibro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarLibro</servlet-name>
+  	<url-pattern>/EditarLibro</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

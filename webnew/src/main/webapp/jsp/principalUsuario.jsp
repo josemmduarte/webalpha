@@ -99,7 +99,7 @@
 					<p class="card-text">
 						<small class="text-muted"><%=l.getIsbn()%></small>
 					</p>
-					<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=lib.getUuid()%'">Actualizar</button>
+					<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=l.getUuid()%>'">Actualizar</button>
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
 						data-target="#modalBorrar<%=l.getIdLibro()%>">Borrar</button>
 					<!-- Modal -->
