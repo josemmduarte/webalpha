@@ -19,6 +19,13 @@
 </head>
 <body>
 	<div class="container">
+	
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Registro</li>
+			<li class="breadcrumb-item text-danger">
+				<a href="../index.jsp">Pagina de Inicio</a></li>
+		</ol>
+	
 		<div class="row justify-content-center">
 			<h1>Registro</h1>
 		</div>

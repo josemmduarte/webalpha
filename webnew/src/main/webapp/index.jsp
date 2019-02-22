@@ -14,11 +14,13 @@
 <title>PlanetDeviluke</title>
 </head>
 <body>
-	<div class="container">
-		<div class="row justify-content-center">
-			<h1>Planet Deviluke</h1>
-			
+		<div class="row justify-content-center" style="padding-top: 100px;">
+			<img src="imagenes/generatedtext.png">
 		</div>
+		<br>
+	<div class="container" Style="background-color: #9F81F7;
+	height: 340px; width: 400px; border-radius: 55px; padding-top: 50px;">
+		
 		<div class="row justify-content-center">
 			<%
 				String error = request.getParameter("mensaje");
@@ -42,12 +44,12 @@
 		<div class="row justify-content-center">
 			<form role="form" method="post" action="ValidarUsuario">
 				<div class="form-group">
-					<label for="usuario">Usuario</label> <input type="text"
+					<label for="usuario"><img src="imagenes/usuario2.png"></label> <input type="text"
 						class="form-control" id="usuario" name="usuario"
 						aria-describedby="usuarioHelp" autofocus required="required">
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label> <input type="password"
+					<label for="password"><img src="imagenes/password2.png"></label> <input type="password"
 						class="form-control" id="password" name="password"
 						required="required">
 				</div>
