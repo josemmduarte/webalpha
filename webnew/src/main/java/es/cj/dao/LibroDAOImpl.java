@@ -13,38 +13,38 @@ import es.cj.bean.Usuario;
 public class LibroDAOImpl implements LibroDAO {
 
 	public List<Libro> listar(Conexion c, Usuario u) {
-		List<Libro> libros = new ArrayList<Libro>();
+		List<Libro> mangas = new ArrayList<Libro>();
 		
-		String sql = "SELECT * FROM libros WHERE idUsuario = ?";
+		String sql = "SELECT * FROM mangas WHERE idUsuario = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
 			sentencia.setInt(1, u.getIdUsuario());
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				Libro auxiliar = new Libro(
-						resultado.getInt("idLibro"), 
+						resultado.getInt("idManga"), 
 						resultado.getString("titulo"), 
 						resultado.getString("autor"), 
 						resultado.getInt("isbn"), 
 						resultado.getBytes("portada"), 
 						resultado.getString("uuid"), 
 						resultado.getInt("idUsuario"));
-				libros.add(auxiliar);
+				mangas.add(auxiliar);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return libros;
+		return mangas;
 	}
 
-	public byte[] obtenerPortada(Conexion c, int idLibro) {
+	public byte[] obtenerPortada(Conexion c, int idManga) {
 		byte[] imagen = null;
 		
-		String sql = "SELECT portada FROM libros WHERE idLibro = ?";
+		String sql = "SELECT portada FROM mangas WHERE idManga = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
-			sentencia.setInt(1, idLibro);
+			sentencia.setInt(1, idManga);
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				imagen = resultado.getBytes("portada");
@@ -57,7 +57,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	public void borrar(Conexion c, String uuid) {
-		String sql = "DELETE FROM libros WHERE uuid = ?";
+		String sql = "DELETE FROM mangas WHERE uuid = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
 			sentencia.setString(1, uuid);
@@ -69,7 +69,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	public void insertar(Conexion con, Libro lib) {
-		String sql = "INSERT INTO libros VALUES (null, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO mangas VALUES (null, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 			sentencia.setString(1, lib.getTitulo());
@@ -89,14 +89,14 @@ public class LibroDAOImpl implements LibroDAO {
 	public Libro obtenerLibroPorUUID(Conexion con, String uuid) {
 		Libro laux = new Libro();
 		
-		String sql = "SELECT * FROM libros WHERE uuid = ?";
+		String sql = "SELECT * FROM mangas WHERE uuid = ?";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 			sentencia.setString(1, uuid);
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				laux = new Libro(
-						resultado.getInt("idLibro"), 
+						resultado.getInt("idManga"), 
 						resultado.getString("titulo"), 
 						resultado.getString("autor"), 
 						resultado.getInt("isbn"), 
@@ -114,7 +114,7 @@ public class LibroDAOImpl implements LibroDAO {
 	public void actualizar(Conexion con, Libro lib) {
 		try {
 			if (lib.getPortada() != null) {
-				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=?, portada=? WHERE uuid=?";
+				String sql = "UPDATE mangas SET titulo=?, autor=?, isbn=?, portada=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
 				sentencia.setString(2, lib.getAutor());
@@ -123,7 +123,7 @@ public class LibroDAOImpl implements LibroDAO {
 				sentencia.setString(5, lib.getUuid());
 				sentencia.executeUpdate();
 			} else {
-				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=? WHERE uuid=?";
+				String sql = "UPDATE mangas SET titulo=?, autor=?, isbn=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
 				sentencia.setString(2, lib.getAutor());

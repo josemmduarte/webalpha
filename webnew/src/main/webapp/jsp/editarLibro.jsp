@@ -72,7 +72,7 @@
 				<input type="number" id="isbn" name="isbn" class="form-control" value="<%=laux.getIsbn() %>" >
 			</div>
 			<div class="form-group">
-				<img alt="Portada" src="image.jsp?idLibro=<%=laux.getIdLibro()%>" 
+				<img alt="Portada" src="image.jsp?idManga=<%=laux.getidManga()%>" 
 					style="width: 250px;height: 350px">
 				<label class="control-label" for="portada">Portada</label>
 				<input type="file" id="portada" name="portada" class="form-control" >

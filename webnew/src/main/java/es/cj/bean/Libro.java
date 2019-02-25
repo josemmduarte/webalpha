@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Libro implements Serializable {
 
-	private int idLibro;
+	private int idManga;
 	private String titulo;
 	private String autor;
 	private int isbn;
@@ -26,9 +26,9 @@ public class Libro implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public Libro(int idLibro, String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
+	public Libro(int idManga, String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
 		super();
-		this.idLibro = idLibro;
+		this.idManga = idManga;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.isbn = isbn;
@@ -37,12 +37,12 @@ public class Libro implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public int getIdLibro() {
-		return idLibro;
+	public int getidManga() {
+		return idManga;
 	}
 
-	public void setIdLibro(int idLibro) {
-		this.idLibro = idLibro;
+	public void setidManga(int idManga) {
+		this.idManga = idManga;
 	}
 
 	public String getTitulo() {
@@ -95,7 +95,7 @@ public class Libro implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Libro [idLibro=" + idLibro + ", titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", uuid="
+		return "Libro [idManga=" + idManga + ", titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", uuid="
 				+ uuid + ", idUsuario=" + idUsuario + "]";
 	}
 	 
