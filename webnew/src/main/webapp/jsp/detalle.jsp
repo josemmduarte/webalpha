@@ -20,6 +20,15 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+<style type="text/css">
+
+img {
+	float: left;
+	margin-right: 20px;
+}
+
+</style>
+
 <title>Editar Manga</title>
 </head>
 <body>
@@ -46,41 +55,25 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
+			<li class="breadcrumb-item"><%=laux.getTitulo() %></li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
-			<li class="breadcrumb-item">Editar Pelicula</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Editar Pelicula</h1>
+			<h1><%=laux.getTitulo() %></h1>
 		</div>
-		
 		<hr>
-		<form class="form" method="post" action="../EditarLibro" enctype="multipart/form-data">
-			<input type="hidden" name="uuid" id="uuid" value="<%=laux.getUuid()%>">
-			<div class="form-group">
-				<label class="control-label" for="titulo">Título</label>
-				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
-			</div>
-			<div class="form-group">
-				<label class="control-label" for="director">director</label>
-				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
-			</div>
-			<div class="form-group">
-				<label class="control-label" for="anyo">año</label>
-				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
-			</div>
-			<div class="form-group">
+		
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
-					style="width: 250px;height: 350px">
-				<label class="control-label" for="portada">Portada</label>
-				<input type="file" id="portada" name="portada" class="form-control" >
-			</div>
-			<div class="form-group">
-				<input type="submit" class="btn btn-primary btn-block" value="Editar">
-			</div>
-		</form>
+					style="width: 250px;height: 371px">
+					
+					
+				<h4>Director: <%=laux.getdirector() %></h4>
+				<h4>Año: <%=laux.getanyo() %></h4>
+				<h4>Sinopsis: <%=laux.getSinopsis() %></h4>
+
 		
 		<% } %>
 	</div>

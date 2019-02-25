@@ -10,7 +10,7 @@ public interface LibroDAO {
 
 	List<Libro> listar(Conexion c, Usuario u);
 	
-	byte [] obtenerPortada(Conexion c, int idManga);
+	byte [] obtenerPortada(Conexion c, int idPelicula);
 	
 	void borrar(Conexion c, String uuid);
 

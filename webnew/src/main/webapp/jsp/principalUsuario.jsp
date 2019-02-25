@@ -58,7 +58,7 @@
 			// Crear un objeto de tipo Conexion con los datos anteriores
 			Conexion con = new Conexion(usu, pass, driver, bd);
 			LibroDAO lDAO = new LibroDAOImpl();
-			List<Libro> mangas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
+			List<Libro> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
 	%>
 	<div class="container">
 
@@ -69,41 +69,38 @@
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 				
-				<div id="navegador">
-                <ul>
-                    <li><a href="inicio.php">Inicio</a></li>
-                    <li><a href="Insertar.php">Insertar</a></li>
-                    <li><a href="Visualizar.php">Visualizar</a></li>
-                    <li><a href="Editar.php">Editar</a></li>
-                </ul>
-        		</div>
 		</ol>
 		
 		<p>
 			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" 
-			style="background-color:#8258FA; border-color:#8258FA;">Añadir Manga</a>
+			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
 		
 		<div class="row col-md-12 text-center" >
 			<%
-				for (Libro l : mangas) {
+				for (Libro l : peliculas) {
 			%>
 
 			<div class="card" style="margin: 10px">
 				<img alt="imagen de libro"
-					src="image.jsp?idManga=<%=l.getidManga()%>" class="card-img-top"
-					style="width: 250px; height: 350px">
+					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
+					style="width: 250px; height: 371px">
 				<div class="card-body">
 					<h5 class="card-title"><%=l.getTitulo()%></h5>
-					<p class="card-text"><%=l.getAutor()%></p>
+					<p class="card-text"><%=l.getdirector()%></p>
+					<!--  
 					<p class="card-text">
-						<small class="text-muted"><%=l.getIsbn()%></small>
+						<small class="text-muted"><%=l.getanyo()%></small>
 					</p>
+					-->
 					<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=l.getUuid()%>'">Actualizar</button>
+					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
+					<br/><br/>
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
-						data-target="#modalBorrar<%=l.getidManga()%>">Borrar</button>
+						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
+					
 					<!-- Modal -->
-					<div class="modal fade" id="modalBorrar<%=l.getidManga()%>" tabindex="-1"
+					<div class="modal fade" id="modalBorrar<%=l.getidPelicula()%>" tabindex="-1"
 						role="dialog" aria-labelledby="exampleModalLabel"
 						aria-hidden="true">
 						<div class="modal-dialog" role="document">

@@ -9,7 +9,7 @@ import es.cj.bean.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
 
-	private String passBD = "mangasCJ2019";
+	private String passBD = "peliculasCJ2019";
 	
 	public Usuario comprobarUsuario(String login, String password, Conexion c) {
 		Usuario u = null;
