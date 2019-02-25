@@ -4,60 +4,45 @@ import java.io.Serializable;
 
 public class Libro implements Serializable {
 
-	private int idPelicula;
+	private int idLibro;
 	private String titulo;
-	private String director;
-	private int anyo;
+	private String autor;
+	private int isbn;
 	private byte[] portada;
 	private String uuid;
 	private int idUsuario;
-	private String sinopsis;
 	
 	public Libro() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
+	public Libro(String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
 		super();
 		this.titulo = titulo;
-		this.director = director;
-		this.anyo = anyo;
-		this.portada = portada;
-		this.uuid = uuid;
-		this.idUsuario = idUsuario;
-		this.sinopsis = sinopsis;
-	}
-
-	
-	
-	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario) {
-		super();
-		this.titulo = titulo;
-		this.director = director;
-		this.anyo = anyo;
+		this.autor = autor;
+		this.isbn = isbn;
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
 	}
 
-	public Libro(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
+	public Libro(int idLibro, String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
 		super();
-		this.idPelicula = idPelicula;
+		this.idLibro = idLibro;
 		this.titulo = titulo;
-		this.director = director;
-		this.anyo = anyo;
+		this.autor = autor;
+		this.isbn = isbn;
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
-		this.sinopsis = sinopsis;
 	}
 
-	public int getidPelicula() {
-		return idPelicula;
+	public int getIdLibro() {
+		return idLibro;
 	}
 
-	public void setidPelicula(int idPelicula) {
-		this.idPelicula = idPelicula;
+	public void setIdLibro(int idLibro) {
+		this.idLibro = idLibro;
 	}
 
 	public String getTitulo() {
@@ -68,20 +53,20 @@ public class Libro implements Serializable {
 		this.titulo = titulo;
 	}
 
-	public String getdirector() {
-		return director;
+	public String getAutor() {
+		return autor;
 	}
 
-	public void setdirector(String director) {
-		this.director = director;
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
-	public int getanyo() {
-		return anyo;
+	public int getIsbn() {
+		return isbn;
 	}
 
-	public void setanyo(int anyo) {
-		this.anyo = anyo;
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
 	}
 
 	public byte[] getPortada() {
@@ -108,17 +93,9 @@ public class Libro implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getSinopsis() {
-		return sinopsis;
-	}
-
-	public void setSinopsis(String sinopsis) {
-		this.sinopsis = sinopsis;
-	}
-
 	@Override
 	public String toString() {
-		return "Libro [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo + ", uuid="
+		return "Libro [idLibro=" + idLibro + ", titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", uuid="
 				+ uuid + ", idUsuario=" + idUsuario + "]";
 	}
 	 

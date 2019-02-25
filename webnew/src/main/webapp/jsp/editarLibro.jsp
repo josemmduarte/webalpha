@@ -47,13 +47,13 @@
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
-			<li class="breadcrumb-item">Editar Pelicula</li>
+			<li class="breadcrumb-item">Editar Manga</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Editar Pelicula</h1>
+			<h1>Editar Libro</h1>
 		</div>
 		
 		<hr>
@@ -64,15 +64,15 @@
 				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="director">director</label>
-				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
+				<label class="control-label" for="autor">Autor</label>
+				<input type="text" id="autor" name="autor" class="form-control" value="<%=laux.getAutor() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="anyo">año</label>
-				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
+				<label class="control-label" for="isbn">ISBN</label>
+				<input type="number" id="isbn" name="isbn" class="form-control" value="<%=laux.getIsbn() %>" >
 			</div>
 			<div class="form-group">
-				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
+				<img alt="Portada" src="image.jsp?idLibro=<%=laux.getIdLibro()%>" 
 					style="width: 250px;height: 350px">
 				<label class="control-label" for="portada">Portada</label>
 				<input type="file" id="portada" name="portada" class="form-control" >
