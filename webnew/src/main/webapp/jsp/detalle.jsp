@@ -1,3 +1,5 @@
+<%@page import="es.cj.dao.ActorDAOImpl"%>
+<%@page import="es.cj.dao.ActorDAO"%>
 <%@page import="es.cj.bean.Libro"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.dao.LibroDAO"%>
@@ -51,6 +53,7 @@ img {
 
 				LibroDAO lDAO = new LibroDAOImpl();
 				Libro laux = lDAO.obtenerLibroPorUUID(con, (String) request.getParameter("uuid"));
+		
 		%>
 
 		<ol class="breadcrumb">
@@ -74,7 +77,7 @@ img {
 			src="image.jsp?idPelicula=<%=laux.getidPelicula()%>"
 			style="width: 250px; height: 371px">
 
-		<form class="star";>
+		<form class="star">
 			<p class="clasificacion">
 				<input id="radio1" type="radio" name="estrellas" value="5">
 				<label for="radio1">&#9733;</label>
@@ -104,10 +107,12 @@ img {
 
 		<button type="button" class="btn btn-default"
 			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Actualizar</button>
-
+			
 		<%
 			}
 		%>
+
+	
 	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

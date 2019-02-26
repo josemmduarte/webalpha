@@ -53,36 +53,36 @@
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Editar Libro</h1>
+			<h1><b>Editar Libro</b></h1>
 		</div>
 		
 		<hr>
 		<form class="form" method="post" action="../EditarLibro" enctype="multipart/form-data">
 			<input type="hidden" name="uuid" id="uuid" value="<%=laux.getUuid()%>">
 			<div class="form-group">
-				<label class="control-label" for="titulo">Título</label>
+				<label class="control-label" for="titulo"><b>Título</b></label>
 				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="director">Director</label>
+				<label class="control-label" for="director"><b>Director</b></label>
 				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="anyo">Año</label>
+				<label class="control-label" for="anyo"><b>Año</b></label>
 				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="sinopsis">Sinopsis</label>
+				<label class="control-label" for="sinopsis"><b>Sinopsis</b></label>
 				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"><%=laux.getSinopsis() %></textarea>
 			</div>
 			<div class="form-group">
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
 					style="width: 250px;height: 371px">
 				<label class="control-label" for="portada"></label>
-				<input type="file" id="portada" name="portada" class="form-control" >
+				<input type="file" id="portada" name="portada" class="form-control"">
 			</div>
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary btn-block" value="Editar">
+				<input type="submit" class="btn btn-primary btn-block" value="Editar" style="background-color:#8258FA; border-color:#8258FA;">
 			</div>
 		</form>
 		

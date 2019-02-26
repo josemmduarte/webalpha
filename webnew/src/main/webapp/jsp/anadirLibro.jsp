@@ -18,7 +18,7 @@
 
 <title>Añadir Pelicula</title>
 </head>
-<body>
+<body background="../imagenes/corn.png">
 	<div class="container">
 	
 		<%
@@ -31,40 +31,40 @@
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
-			<li class="breadcrumb-item">Añadir Libro</li>
+			<li class="breadcrumb-item">Añadir Pelicula</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 				
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Añadir Pelicula</h1>
+			<h1><b>Añadir Pelicula</b></h1>
 		</div>
 		
 		<hr>
 		<form class="form" method="post" action="../AnadirLibro" enctype="multipart/form-data">
 			<div class="form-group">
-				<label class="control-label" for="titulo">Titulo</label>
+				<label class="control-label" for="titulo"><b>Titulo</b></label>
 				<input type="text" id="titulo" name="titulo" class="form-control">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="director">Director</label>
+				<label class="control-label" for="director"><b>Director</b></label>
 				<input type="text" id="director" name="director" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="anyo">Año</label>
+				<label class="control-label" for="anyo"><b>Año</b></label>
 				<input type="number" id="anyo" name="anyo" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="sinopsis">Sinopsis</label>
+				<label class="control-label" for="sinopsis"><b>Sinopsis</b></label>
 				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="portada">Portada</label>
+				<label class="control-label" for="portada"><b>Portada</b></label>
 				<input type="file" id="portada" name="portada" class="form-control" >
 			</div>
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary btn-block" value="Añadir">
+				<input type="submit" class="btn btn-primary btn-block" value="Añadir" style="background-color:#8258FA; border-color:#8258FA;">
 			</div>
 		</form>
 		

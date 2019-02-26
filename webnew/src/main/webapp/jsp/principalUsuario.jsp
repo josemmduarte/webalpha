@@ -75,15 +75,20 @@
 			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
 		
+		<div class="row justify-content-center">
+			<img src="../imagenes/generatedtext.png">
+		</div>
+		
 		<div class="row col-md-12 text-center" >
 			<%
 				for (Libro l : peliculas) {
 			%>
 
 			<div class="card" style="margin: 10px; width: 252px;">
-				<img alt="imagen de libro"
-					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
+				<button type="button" class="btn btn-link" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">
+					<img alt="imagen de libro" src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
 					style="width: 250px;height: 371px">
+				</button>
 				<div class="card-body">
 					<!--   <h5 class="card-title"><%=l.getTitulo()%></h5>
 						 <p class="card-text"><%=l.getdirector()%></p>
@@ -93,8 +98,8 @@
 					
 					<p><b><%=l.getTitulo() %></b></p>
 					
-					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
-					
+					<!--  <button type="button" class="btn btn-secondary" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
+					-->
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
 						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
 					<!-- Modal -->
@@ -104,19 +109,19 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Borrar Pelicula</h5>
+									<h5 class="modal-title" id="exampleModalLabel" style="color: red; font-weight: bold;">Borrar Pelicula</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">×</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									¿Desea borrar el Tomo: <%=l.getTitulo() %>?
+									¿Desea borrar la Pelicula: <%=l.getTitulo() %>?
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary"
 										data-dismiss="modal">No</button>
-									<button type="button" class="btn btn-primary" 
+									<button type="button" class="btn btn-danger" 
 										onclick="location.href='../BorrarLibro?uuid=<%=l.getUuid()%>'">Sí</button>
 								</div>
 							</div>

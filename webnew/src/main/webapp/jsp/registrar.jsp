@@ -27,7 +27,7 @@
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Registro</h1>
+			<h1><b>Registro</b></h1>
 		</div>
 		<div class="row justify-content-center">
 			<%
@@ -51,25 +51,25 @@
 		<hr>
 		<form class="form" method="post" action="../Registrar" onsubmit="return validarFormulario()">
 			<div class="form-group">
-				<label class="control-label" for="login">Login</label>
+				<label class="control-label" for="login"><b>Login</b></label>
 				<input type="text" id="login" name="login" class="form-control">
 				<span id="splogin" style="color: red"></span>
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="password">Password</label>
+				<label class="control-label" for="password"><b>Password</b></label>
 				<input type="password" id="password" name="password" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="nombre">Nombre</label>
+				<label class="control-label" for="nombre"><b>Nombre</b></label>
 				<input type="text" id="nombre" name="nombre" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="email">Email</label>
+				<label class="control-label" for="email"><b>Email</b></label>
 				<input type="email" id="email" name="email" class="form-control" >
 				<span id="spemail" style="color: red"></span>
 			</div>
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary btn-block" value="Enviar">
+				<input type="submit" class="btn btn-primary btn-block" value="Enviar" style="background-color:#8258FA; border-color:#8258FA;">
 			</div>
 		</form>
 	</div>
