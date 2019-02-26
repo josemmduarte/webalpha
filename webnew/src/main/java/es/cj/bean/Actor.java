@@ -44,7 +44,7 @@ public class Actor implements Serializable {
 	}
 
 	public void setpapel(String papel) {
-		papel = papel;
+		this.papel = papel;
 	}
 
 	public byte[] getFoto() {

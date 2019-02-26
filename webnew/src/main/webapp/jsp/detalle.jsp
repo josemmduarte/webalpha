@@ -1,5 +1,3 @@
-<%@page import="es.cj.dao.ActorDAOImpl"%>
-<%@page import="es.cj.dao.ActorDAO"%>
 <%@page import="es.cj.bean.Libro"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.dao.LibroDAO"%>
@@ -53,7 +51,6 @@ img {
 
 				LibroDAO lDAO = new LibroDAOImpl();
 				Libro laux = lDAO.obtenerLibroPorUUID(con, (String) request.getParameter("uuid"));
-		
 		%>
 
 		<ol class="breadcrumb">
@@ -80,13 +77,11 @@ img {
 		<form class="star">
 			<p class="clasificacion">
 				<input id="radio1" type="radio" name="estrellas" value="5">
-				<label for="radio1">&#9733;</label>
-				<input id="radio2" type="radio" name="estrellas" value="4">
-				<label for="radio2">&#9733;</label>
+				<label for="radio1">&#9733;</label> <input id="radio2" type="radio"
+					name="estrellas" value="4"> <label for="radio2">&#9733;</label>
 				<input id="radio3" type="radio" name="estrellas" value="3">
-				<label for="radio3">&#9733;</label>
-				<input id="radio4" type="radio" name="estrellas" value="2">
-				<label for="radio4">&#9733;</label>
+				<label for="radio3">&#9733;</label> <input id="radio4" type="radio"
+					name="estrellas" value="2"> <label for="radio4">&#9733;</label>
 				<input id="radio5" type="radio" name="estrellas" value="1">
 				<label for="radio5">&#9733;</label>
 			</p>
@@ -112,7 +107,6 @@ img {
 			}
 		%>
 
-	
 	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
