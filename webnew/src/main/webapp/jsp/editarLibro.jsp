@@ -22,7 +22,7 @@
 
 <title>Editar Pelicula</title>
 </head>
-<body>
+<body background="../imagenes/corn.png">
 	<div class="container">
 		<%
 		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
