@@ -48,12 +48,12 @@
 				<input type="text" id="titulo" name="titulo" class="form-control">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="autor">Autor</label>
-				<input type="text" id="autor" name="autor" class="form-control" >
+				<label class="control-label" for="director">director</label>
+				<input type="text" id="director" name="director" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="isbn">ISBN</label>
-				<input type="number" id="isbn" name="isbn" class="form-control" >
+				<label class="control-label" for="anyo">anyo</label>
+				<input type="number" id="anyo" name="anyo" class="form-control" >
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="portada">Portada</label>

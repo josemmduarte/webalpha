@@ -13,38 +13,38 @@ import es.cj.bean.Usuario;
 public class LibroDAOImpl implements LibroDAO {
 
 	public List<Libro> listar(Conexion c, Usuario u) {
-		List<Libro> libros = new ArrayList<Libro>();
+		List<Libro> peliculas = new ArrayList<Libro>();
 		
-		String sql = "SELECT * FROM libros WHERE idUsuario = ?";
+		String sql = "SELECT * FROM peliculas WHERE idUsuario = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
 			sentencia.setInt(1, u.getIdUsuario());
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				Libro auxiliar = new Libro(
-						resultado.getInt("idLibro"), 
+						resultado.getInt("idPelicula"), 
 						resultado.getString("titulo"), 
-						resultado.getString("autor"), 
-						resultado.getInt("isbn"), 
+						resultado.getString("director"), 
+						resultado.getInt("anyo"), 
 						resultado.getBytes("portada"), 
 						resultado.getString("uuid"), 
 						resultado.getInt("idUsuario"));
-				libros.add(auxiliar);
+				peliculas.add(auxiliar);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return libros;
+		return peliculas;
 	}
 
-	public byte[] obtenerPortada(Conexion c, int idLibro) {
+	public byte[] obtenerPortada(Conexion c, int idPelicula) {
 		byte[] imagen = null;
 		
-		String sql = "SELECT portada FROM libros WHERE idLibro = ?";
+		String sql = "SELECT portada FROM peliculas WHERE idPelicula = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
-			sentencia.setInt(1, idLibro);
+			sentencia.setInt(1, idPelicula);
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				imagen = resultado.getBytes("portada");
@@ -57,7 +57,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	public void borrar(Conexion c, String uuid) {
-		String sql = "DELETE FROM libros WHERE uuid = ?";
+		String sql = "DELETE FROM peliculas WHERE uuid = ?";
 		try {
 			PreparedStatement sentencia = c.getConector().prepareStatement(sql);
 			sentencia.setString(1, uuid);
@@ -69,12 +69,12 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	public void insertar(Conexion con, Libro lib) {
-		String sql = "INSERT INTO libros VALUES (null, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO peliculas VALUES (null, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 			sentencia.setString(1, lib.getTitulo());
-			sentencia.setString(2, lib.getAutor());
-			sentencia.setInt(3, lib.getIsbn());
+			sentencia.setString(2, lib.getdirector());
+			sentencia.setInt(3, lib.getanyo());
 			sentencia.setBytes(4, lib.getPortada());
 			sentencia.setInt(5, lib.getIdUsuario());
 			sentencia.setString(6, lib.getUuid());
@@ -89,17 +89,17 @@ public class LibroDAOImpl implements LibroDAO {
 	public Libro obtenerLibroPorUUID(Conexion con, String uuid) {
 		Libro laux = new Libro();
 		
-		String sql = "SELECT * FROM libros WHERE uuid = ?";
+		String sql = "SELECT * FROM peliculas WHERE uuid = ?";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 			sentencia.setString(1, uuid);
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
 				laux = new Libro(
-						resultado.getInt("idLibro"), 
+						resultado.getInt("idPelicula"), 
 						resultado.getString("titulo"), 
-						resultado.getString("autor"), 
-						resultado.getInt("isbn"), 
+						resultado.getString("director"), 
+						resultado.getInt("anyo"), 
 						resultado.getBytes("portada"), 
 						resultado.getString("uuid"), 
 						resultado.getInt("idUsuario"));
@@ -114,20 +114,20 @@ public class LibroDAOImpl implements LibroDAO {
 	public void actualizar(Conexion con, Libro lib) {
 		try {
 			if (lib.getPortada() != null) {
-				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=?, portada=? WHERE uuid=?";
+				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=?, portada=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
-				sentencia.setString(2, lib.getAutor());
-				sentencia.setInt(3, lib.getIsbn());
+				sentencia.setString(2, lib.getdirector());
+				sentencia.setInt(3, lib.getanyo());
 				sentencia.setBytes(4, lib.getPortada());
 				sentencia.setString(5, lib.getUuid());
 				sentencia.executeUpdate();
 			} else {
-				String sql = "UPDATE libros SET titulo=?, autor=?, isbn=? WHERE uuid=?";
+				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
-				sentencia.setString(2, lib.getAutor());
-				sentencia.setInt(3, lib.getIsbn());
+				sentencia.setString(2, lib.getdirector());
+				sentencia.setInt(3, lib.getanyo());
 				sentencia.setString(4, lib.getUuid());
 				sentencia.executeUpdate();
 			}

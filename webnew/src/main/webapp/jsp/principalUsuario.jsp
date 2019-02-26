@@ -58,7 +58,7 @@
 			// Crear un objeto de tipo Conexion con los datos anteriores
 			Conexion con = new Conexion(usu, pass, driver, bd);
 			LibroDAO lDAO = new LibroDAOImpl();
-			List<Libro> libros = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
+			List<Libro> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
 	%>
 	<div class="container">
 
@@ -86,24 +86,24 @@
 		
 		<div class="row col-md-12 text-center" >
 			<%
-				for (Libro l : libros) {
+				for (Libro l : peliculas) {
 			%>
 
 			<div class="card" style="margin: 10px">
 				<img alt="imagen de libro"
-					src="image.jsp?idLibro=<%=l.getIdLibro()%>" class="card-img-top"
+					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
 					style="width: 250px; height: 350px">
 				<div class="card-body">
 					<h5 class="card-title"><%=l.getTitulo()%></h5>
-					<p class="card-text"><%=l.getAutor()%></p>
+					<p class="card-text"><%=l.getdirector()%></p>
 					<p class="card-text">
-						<small class="text-muted"><%=l.getIsbn()%></small>
+						<small class="text-muted"><%=l.getanyo()%></small>
 					</p>
 					<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=l.getUuid()%>'">Actualizar</button>
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
-						data-target="#modalBorrar<%=l.getIdLibro()%>">Borrar</button>
+						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
 					<!-- Modal -->
-					<div class="modal fade" id="modalBorrar<%=l.getIdLibro()%>" tabindex="-1"
+					<div class="modal fade" id="modalBorrar<%=l.getidPelicula()%>" tabindex="-1"
 						role="dialog" aria-labelledby="exampleModalLabel"
 						aria-hidden="true">
 						<div class="modal-dialog" role="document">

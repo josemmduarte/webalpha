@@ -64,15 +64,15 @@
 				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="autor">Autor</label>
-				<input type="text" id="autor" name="autor" class="form-control" value="<%=laux.getAutor() %>" >
+				<label class="control-label" for="director">director</label>
+				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="isbn">ISBN</label>
-				<input type="number" id="isbn" name="isbn" class="form-control" value="<%=laux.getIsbn() %>" >
+				<label class="control-label" for="anyo">anyo</label>
+				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
 			</div>
 			<div class="form-group">
-				<img alt="Portada" src="image.jsp?idLibro=<%=laux.getIdLibro()%>" 
+				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
 					style="width: 250px;height: 350px">
 				<label class="control-label" for="portada">Portada</label>
 				<input type="file" id="portada" name="portada" class="form-control" >

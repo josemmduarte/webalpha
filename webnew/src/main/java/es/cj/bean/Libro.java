@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class Libro implements Serializable {
 
-	private int idLibro;
+	private int idPelicula;
 	private String titulo;
-	private String autor;
-	private int isbn;
+	private String director;
+	private int anyo;
 	private byte[] portada;
 	private String uuid;
 	private int idUsuario;
@@ -16,33 +16,33 @@ public class Libro implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Libro(String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
+	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario) {
 		super();
 		this.titulo = titulo;
-		this.autor = autor;
-		this.isbn = isbn;
+		this.director = director;
+		this.anyo = anyo;
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
 	}
 
-	public Libro(int idLibro, String titulo, String autor, int isbn, byte[] portada, String uuid, int idUsuario) {
+	public Libro(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario) {
 		super();
-		this.idLibro = idLibro;
+		this.idPelicula = idPelicula;
 		this.titulo = titulo;
-		this.autor = autor;
-		this.isbn = isbn;
+		this.director = director;
+		this.anyo = anyo;
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
 	}
 
-	public int getIdLibro() {
-		return idLibro;
+	public int getidPelicula() {
+		return idPelicula;
 	}
 
-	public void setIdLibro(int idLibro) {
-		this.idLibro = idLibro;
+	public void setidPelicula(int idPelicula) {
+		this.idPelicula = idPelicula;
 	}
 
 	public String getTitulo() {
@@ -53,20 +53,20 @@ public class Libro implements Serializable {
 		this.titulo = titulo;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getdirector() {
+		return director;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setdirector(String director) {
+		this.director = director;
 	}
 
-	public int getIsbn() {
-		return isbn;
+	public int getanyo() {
+		return anyo;
 	}
 
-	public void setIsbn(int isbn) {
-		this.isbn = isbn;
+	public void setanyo(int anyo) {
+		this.anyo = anyo;
 	}
 
 	public byte[] getPortada() {
@@ -95,7 +95,7 @@ public class Libro implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Libro [idLibro=" + idLibro + ", titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", uuid="
+		return "Libro [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo + ", uuid="
 				+ uuid + ", idUsuario=" + idUsuario + "]";
 	}
 	 

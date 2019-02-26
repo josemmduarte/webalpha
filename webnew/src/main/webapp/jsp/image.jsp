@@ -5,9 +5,9 @@
 	String driver = sc.getInitParameter("driver");
 	String bd = sc.getInitParameter("database");
 	Conexion con = new Conexion(usu, pass, driver, bd);
-	String idLibro = request.getParameter("idLibro");
+	String idPelicula = request.getParameter("idPelicula");
 	LibroDAO lDAO = new LibroDAOImpl();
-	byte[] imagen = lDAO.obtenerPortada(con, Integer.parseInt(idLibro));
+	byte[] imagen = lDAO.obtenerPortada(con, Integer.parseInt(idPelicula));
 	try {
 		if (imagen != null) {
 			response.setContentType("imagen/jpeg");

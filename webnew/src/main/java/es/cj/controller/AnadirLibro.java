@@ -55,8 +55,8 @@ public class AnadirLibro extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String titulo = request.getParameter("titulo");
-		String autor = request.getParameter("autor");
-		int isbn = Integer.parseInt(request.getParameter("isbn"));
+		String director = request.getParameter("director");
+		int anyo = Integer.parseInt(request.getParameter("anyo"));
 		String uuid = UUID.randomUUID().toString();
 
 		HttpSession session = request.getSession();
@@ -80,7 +80,7 @@ public class AnadirLibro extends HttpServlet {
 			ImageIO.write(buffered, "jpg", os);
 		}
 
-		Libro lib = new Libro(titulo, autor, isbn, os.toByteArray(), uuid, idUsuario);
+		Libro lib = new Libro(titulo, director, anyo, os.toByteArray(), uuid, idUsuario);
 
 		LibroDAO lDAO = new LibroDAOImpl();
 
