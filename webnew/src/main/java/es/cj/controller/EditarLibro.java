@@ -53,6 +53,7 @@ public class EditarLibro extends HttpServlet {
 			throws ServletException, IOException {
 		String titulo = request.getParameter("titulo");
 		String director = request.getParameter("director");
+		String sinopsis = request.getParameter("sinopsis");
 		int anyo = Integer.parseInt(request.getParameter("anyo"));
 		String uuid = request.getParameter("uuid");
 
@@ -79,9 +80,9 @@ public class EditarLibro extends HttpServlet {
 			os = new ByteArrayOutputStream();
 			ImageIO.write(buffered, "jpg", os);
 
-			lib = new Libro(titulo, director, anyo, os.toByteArray(), uuid, idUsuario);
+			lib = new Libro(titulo, director, anyo, os.toByteArray(), uuid, idUsuario, sinopsis);
 		} else {
-			lib = new Libro(titulo, director, anyo, null, uuid, idUsuario);
+			lib = new Libro(titulo, director, anyo, null, uuid, idUsuario, sinopsis);
 		}
 
 		LibroDAO lDAO = new LibroDAOImpl();

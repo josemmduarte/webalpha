@@ -11,12 +11,13 @@ public class Libro implements Serializable {
 	private byte[] portada;
 	private String uuid;
 	private int idUsuario;
+	private String sinopsis;
 	
 	public Libro() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario) {
+	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
 		super();
 		this.titulo = titulo;
 		this.director = director;
@@ -24,9 +25,10 @@ public class Libro implements Serializable {
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
+		this.sinopsis = sinopsis;
 	}
 
-	public Libro(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario) {
+	public Libro(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
 		super();
 		this.idPelicula = idPelicula;
 		this.titulo = titulo;
@@ -35,6 +37,7 @@ public class Libro implements Serializable {
 		this.portada = portada;
 		this.uuid = uuid;
 		this.idUsuario = idUsuario;
+		this.sinopsis = sinopsis;
 	}
 
 	public int getidPelicula() {
@@ -93,12 +96,18 @@ public class Libro implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 	
-	
+	public String getSinopsis() {
+		return sinopsis;
+	}
+
+	public void setSinopsis(String sinopsis) {
+		this.sinopsis = sinopsis;
+	}
 
 	@Override
 	public String toString() {
-		return "Libro [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo + ", uuid="
-				+ uuid + ", idUsuario=" + idUsuario + "]";
+		return "Libro [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo
+				+ ", uuid=" + uuid + ", idUsuario=" + idUsuario + ", sinopsis=" + sinopsis + "]";
 	}
 	 
 }

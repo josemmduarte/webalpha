@@ -72,6 +72,10 @@
 				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
 			</div>
 			<div class="form-group">
+				<label class="control-label" for="sinopsis">sinopsis</label>
+				<input type="text" id="sinopsis" name="sinopsis" class="form-control" value="<%=laux.getSinopsis() %>" >
+			</div>
+			<div class="form-group">
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
 					style="width: 250px;height: 350px">
 				<label class="control-label" for="portada">Portada</label>

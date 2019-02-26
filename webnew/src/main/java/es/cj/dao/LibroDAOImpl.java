@@ -28,7 +28,8 @@ public class LibroDAOImpl implements LibroDAO {
 						resultado.getInt("anyo"), 
 						resultado.getBytes("portada"), 
 						resultado.getString("uuid"), 
-						resultado.getInt("idUsuario"));
+						resultado.getInt("idUsuario"),
+						resultado.getString("sinopsis"));
 				peliculas.add(auxiliar);
 			}
 		} catch (SQLException e) {
@@ -69,7 +70,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	public void insertar(Conexion con, Libro lib) {
-		String sql = "INSERT INTO peliculas VALUES (null, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO peliculas VALUES (null, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 			sentencia.setString(1, lib.getTitulo());
@@ -78,6 +79,7 @@ public class LibroDAOImpl implements LibroDAO {
 			sentencia.setBytes(4, lib.getPortada());
 			sentencia.setInt(5, lib.getIdUsuario());
 			sentencia.setString(6, lib.getUuid());
+			sentencia.setString(7, lib.getSinopsis());
 			
 			sentencia.executeUpdate();
 		} catch (Exception e) {
@@ -102,7 +104,8 @@ public class LibroDAOImpl implements LibroDAO {
 						resultado.getInt("anyo"), 
 						resultado.getBytes("portada"), 
 						resultado.getString("uuid"), 
-						resultado.getInt("idUsuario"));
+						resultado.getInt("idUsuario"),
+						resultado.getString("sinopsis"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -114,21 +117,23 @@ public class LibroDAOImpl implements LibroDAO {
 	public void actualizar(Conexion con, Libro lib) {
 		try {
 			if (lib.getPortada() != null) {
-				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=?, portada=? WHERE uuid=?";
+				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=?, portada=?, sinopsis=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
 				sentencia.setString(2, lib.getdirector());
 				sentencia.setInt(3, lib.getanyo());
 				sentencia.setBytes(4, lib.getPortada());
-				sentencia.setString(5, lib.getUuid());
+				sentencia.setString(5, lib.getSinopsis());
+				sentencia.setString(6, lib.getUuid());
 				sentencia.executeUpdate();
 			} else {
-				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=? WHERE uuid=?";
+				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=?, sinopsis=? WHERE uuid=?";
 				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
 				sentencia.setString(1, lib.getTitulo());
 				sentencia.setString(2, lib.getdirector());
 				sentencia.setInt(3, lib.getanyo());
-				sentencia.setString(4, lib.getUuid());
+				sentencia.setString(4, lib.getSinopsis());
+				sentencia.setString(5, lib.getUuid());
 				sentencia.executeUpdate();
 			}
 		} catch (Exception e) {

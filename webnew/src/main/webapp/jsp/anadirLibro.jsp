@@ -56,6 +56,10 @@
 				<input type="number" id="anyo" name="anyo" class="form-control" >
 			</div>
 			<div class="form-group">
+				<label class="control-label" for="sinopsis">sinopsis</label>
+				<input type="text" id="sinopsis" name="sinopsis" class="form-control" >
+			</div>
+			<div class="form-group">
 				<label class="control-label" for="portada">Portada</label>
 				<input type="file" id="portada" name="portada" class="form-control" >
 			</div>
