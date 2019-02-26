@@ -64,21 +64,21 @@
 				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="director">director</label>
+				<label class="control-label" for="director">Director</label>
 				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="anyo">anyo</label>
+				<label class="control-label" for="anyo">Año</label>
 				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="sinopsis">sinopsis</label>
-				<input type="text" id="sinopsis" name="sinopsis" class="form-control" value="<%=laux.getSinopsis() %>" >
+				<label class="control-label" for="sinopsis">Sinopsis</label>
+				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"><%=laux.getSinopsis() %></textarea>
 			</div>
 			<div class="form-group">
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
-					style="width: 250px;height: 350px">
-				<label class="control-label" for="portada">Portada</label>
+					style="width: 250px;height: 371px">
+				<label class="control-label" for="portada"></label>
 				<input type="file" id="portada" name="portada" class="form-control" >
 			</div>
 			<div class="form-group">

@@ -48,16 +48,16 @@
 				<input type="text" id="titulo" name="titulo" class="form-control">
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="director">director</label>
+				<label class="control-label" for="director">Director</label>
 				<input type="text" id="director" name="director" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="anyo">anyo</label>
+				<label class="control-label" for="anyo">Año</label>
 				<input type="number" id="anyo" name="anyo" class="form-control" >
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="sinopsis">sinopsis</label>
-				<input type="text" id="sinopsis" name="sinopsis" class="form-control" >
+				<label class="control-label" for="sinopsis">Sinopsis</label>
+				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="portada">Portada</label>

@@ -25,3 +25,48 @@ body {
    text-align: center;
    margin: 0 10px 0 0;
 } 
+
+.control-label {
+	font-size: 20px;
+}
+
+/* Estrellas */
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+  font-size: 32px;
+	font-size: 2rem;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+
