@@ -92,6 +92,8 @@ public class Libro implements Serializable {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+	
+	
 
 	@Override
 	public String toString() {
