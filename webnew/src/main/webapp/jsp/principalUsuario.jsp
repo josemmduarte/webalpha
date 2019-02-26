@@ -44,7 +44,7 @@
 
 <title>Principal Usuario</title>
 </head>
-<body background="../imagenes/one.png">
+<body background="../imagenes/corn.png">
 	<%
 		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
 			response.sendRedirect("../index.jsp?mensaje=Error de sesión");
@@ -68,15 +68,6 @@
 			<li class="breadcrumb-item">Principal Usuario</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
-				
-				<div id="navegador">
-                <ul>
-                    <li><a href="inicio.php">Inicio</a></li>
-                    <li><a href="Insertar.php">Insertar</a></li>
-                    <li><a href="Visualizar.php">Visualizar</a></li>
-                    <li><a href="Editar.php">Editar</a></li>
-                </ul>
-        		</div>
 		</ol>
 		
 		<p>

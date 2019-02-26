@@ -13,7 +13,7 @@
 
 <title>PlanetDeviluke</title>
 </head>
-<body>
+<body background="imagenes/corn.png">
 		<div class="row justify-content-center" style="padding-top: 100px;">
 			<img src="imagenes/generatedtext.png">
 		</div>
@@ -21,25 +21,7 @@
 	<div class="container" Style="background-color: #9F81F7;
 	height: 340px; width: 400px; border-radius: 55px; padding-top: 50px;">
 		
-		<div class="row justify-content-center">
-			<%
-				String error = request.getParameter("mensaje");
-				if (error != null) {
-			%>
-			<div class="alert alert-warning alert-dismissible fade show"
-				role="alert">
-				<%
-					out.print(error);
-				%>
-				<button type="button" class="close" data-dismiss="alert"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<%
-				}
-			%>
-		</div>
+		
 
 		<div class="row justify-content-center">
 			<form role="form" method="post" action="ValidarUsuario">
@@ -59,6 +41,28 @@
 
 		</div>
 	</div>
+	
+	<br>
+	
+	<div class="row justify-content-center">
+			<%
+				String error = request.getParameter("mensaje");
+				if (error != null) {
+			%>
+			<div class="alert alert-warning alert-dismissible fade show"
+				role="alert">
+				<%
+					out.print(error);
+				%>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<%
+				}
+			%>
+		</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
