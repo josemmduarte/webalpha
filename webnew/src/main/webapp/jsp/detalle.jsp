@@ -69,8 +69,10 @@ img {
 
 				<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Actualizar</button>
 				<br><br>
+				
 				<h4><b>Director:</b> <%=laux.getdirector() %></h4>
 				<h4><b>Año:</b> <%=laux.getanyo() %></h4>
+				<h4><b>Sinopsis:</b> <%=laux.getSinopsis() %></h4>
 
 
 

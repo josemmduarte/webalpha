@@ -85,11 +85,11 @@
 					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
 					style="width: 250px;height: 371px">
 				<div class="card-body">
-					<h5 class="card-title"><%=l.getTitulo()%></h5>
-					<p class="card-text"><%=l.getdirector()%></p>
-					<p class="card-text">
-						<small class="text-muted"><%=l.getanyo()%></small>
-					</p>
+					<!--   <h5 class="card-title"><%=l.getTitulo()%></h5>
+						 <p class="card-text"><%=l.getdirector()%></p>
+					 	<p class="card-text">
+						 <small class="text-muted"><%=l.getanyo()%></small>
+						</p> -->
 					
 					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
 					
