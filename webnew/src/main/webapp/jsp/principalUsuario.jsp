@@ -92,14 +92,17 @@
 			<div class="card" style="margin: 10px">
 				<img alt="imagen de libro"
 					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
-					style="width: 250px; height: 350px">
+					style="width: 250px;height: 371px">
 				<div class="card-body">
 					<h5 class="card-title"><%=l.getTitulo()%></h5>
 					<p class="card-text"><%=l.getdirector()%></p>
 					<p class="card-text">
 						<small class="text-muted"><%=l.getanyo()%></small>
 					</p>
-					<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=l.getUuid()%>'">Actualizar</button>
+					
+					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
+					
+					
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
 						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
 					<!-- Modal -->
