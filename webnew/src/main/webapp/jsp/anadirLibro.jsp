@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<title>Añadir Manga</title>
+<title>Añadir Pelicula</title>
 </head>
 <body>
 	<div class="container">
@@ -38,7 +38,7 @@
 		</ol>
 	
 		<div class="row justify-content-center">
-			<h1>Añadir Manga</h1>
+			<h1>Añadir Pelicula</h1>
 		</div>
 		
 		<hr>

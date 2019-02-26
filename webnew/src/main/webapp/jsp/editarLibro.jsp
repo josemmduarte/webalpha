@@ -20,7 +20,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<title>Editar Manga</title>
+<title>Editar Pelicula</title>
 </head>
 <body>
 	<div class="container">
@@ -47,7 +47,7 @@
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
-			<li class="breadcrumb-item">Editar Manga</li>
+			<li class="breadcrumb-item">Editar Pelicula</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>

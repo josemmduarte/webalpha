@@ -27,9 +27,9 @@ img {
 }
 </style>
 
-<title>Editar Manga</title>
+<title>Editar Pelicula</title>
 </head>
-<body>
+<body background="../imagenes/corn.png">
 	<div class="container">
 		<%
 		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
@@ -68,12 +68,13 @@ img {
 					style="width: 250px;height: 371px">
 
 				<button type="button" class="btn btn-default" onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Actualizar</button>
-				<br><br>
+				<br>
 				
-				<h4><b>Director:</b> <%=laux.getdirector() %></h4>
-				<h4><b>Año:</b> <%=laux.getanyo() %></h4>
-				<h4><b>Sinopsis:</b> <%=laux.getSinopsis() %></h4>
-
+				<div class="card" style="margin: 10px; background-color: #D8CEF6; border: 0px;">
+					<h4><b>Director:</b> <%=laux.getdirector() %></h4>
+					<h4><b>Año:</b> <%=laux.getanyo() %></h4>
+					<h4><b>Sinopsis:</b> <%=laux.getSinopsis() %></h4>
+				</div>
 
 
 		<% } %>

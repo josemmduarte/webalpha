@@ -72,7 +72,7 @@
 		
 		<p>
 			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" 
-			style="background-color:#8258FA; border-color:#8258FA;">Añadir Manga</a>
+			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
 		
 		<div class="row col-md-12 text-center" >
@@ -80,7 +80,7 @@
 				for (Libro l : peliculas) {
 			%>
 
-			<div class="card" style="margin: 10px">
+			<div class="card" style="margin: 10px; width: 252px;">
 				<img alt="imagen de libro"
 					src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
 					style="width: 250px;height: 371px">
@@ -91,8 +91,9 @@
 						 <small class="text-muted"><%=l.getanyo()%></small>
 						</p> -->
 					
-					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
+					<p><b><%=l.getTitulo() %></b></p>
 					
+					<button type="button" class="btn btn-default" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
 					
 					<button type="button" class="btn btn-danger" data-toggle="modal" 
 						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
@@ -103,7 +104,7 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Borrar Manga</h5>
+									<h5 class="modal-title" id="exampleModalLabel">Borrar Pelicula</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">×</span>
