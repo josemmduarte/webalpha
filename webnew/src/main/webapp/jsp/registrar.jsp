@@ -52,20 +52,20 @@
 		<form class="form" method="post" action="../Registrar" onsubmit="return validarFormulario()">
 			<div class="form-group">
 				<label class="control-label" for="login"><b>Login</b></label>
-				<input type="text" id="login" name="login" class="form-control">
+				<input type="text" id="login" name="login" class="form-control" maxlength="45" required>
 				<span id="splogin" style="color: red"></span>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="password"><b>Password</b></label>
-				<input type="password" id="password" name="password" class="form-control" >
+				<input type="password" id="password" name="password" class="form-control" maxlength="255" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="nombre"><b>Nombre</b></label>
-				<input type="text" id="nombre" name="nombre" class="form-control" >
+				<input type="text" id="nombre" name="nombre" class="form-control" maxlength="45" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="email"><b>Email</b></label>
-				<input type="email" id="email" name="email" class="form-control" >
+				<input type="email" id="email" name="email" class="form-control" maxlength="45" required>
 				<span id="spemail" style="color: red"></span>
 			</div>
 			<div class="form-group">
@@ -73,6 +73,7 @@
 			</div>
 		</form>
 	</div>
+	
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../js/jquery-3.3.1.slim.min.js"></script>

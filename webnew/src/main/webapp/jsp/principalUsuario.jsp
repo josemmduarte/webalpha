@@ -98,6 +98,7 @@
 					
 					<p><b><%=l.getTitulo() %></b></p>
 					
+					
 					<!--  <button type="button" class="btn btn-secondary" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
 					-->
 					<button type="button" class="btn btn-danger" data-toggle="modal" 

@@ -41,27 +41,29 @@
 			<h1><b>Añadir Pelicula</b></h1>
 		</div>
 		
+		
+		
 		<hr>
-		<form class="form" method="post" action="../AnadirLibro" enctype="multipart/form-data">
+		<form class="form" method="post" action="../AnadirLibro" enctype="multipart/form-data" onsubmit="return validarFormulario()">
 			<div class="form-group">
 				<label class="control-label" for="titulo"><b>Titulo</b></label>
-				<input type="text" id="titulo" name="titulo" class="form-control">
+				<input type="text" id="titulo" name="titulo" class="form-control" maxlength="45" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="director"><b>Director</b></label>
-				<input type="text" id="director" name="director" class="form-control" >
+				<input type="text" id="director" name="director" class="form-control" maxlength="45" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="anyo"><b>Año</b></label>
-				<input type="number" id="anyo" name="anyo" class="form-control" >
+				<input type="number" id="anyo" name="anyo" class="form-control" maxlength="4" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="sinopsis"><b>Sinopsis</b></label>
-				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"></textarea>
+				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control" maxlength="500"></textarea>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="portada"><b>Portada</b></label>
-				<input type="file" id="portada" name="portada" class="form-control" >
+				<input type="file" id="portada" name="portada" class="form-control" accept="image/*" required>
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-block" value="Añadir" style="background-color:#8258FA; border-color:#8258FA;">

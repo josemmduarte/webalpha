@@ -57,29 +57,29 @@
 		</div>
 		
 		<hr>
-		<form class="form" method="post" action="../EditarLibro" enctype="multipart/form-data">
+		<form class="form" method="post" action="../EditarLibro" enctype="multipart/form-data" onsubmit="return validarFormulario()">
 			<input type="hidden" name="uuid" id="uuid" value="<%=laux.getUuid()%>">
 			<div class="form-group">
 				<label class="control-label" for="titulo"><b>Título</b></label>
-				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>">
+				<input type="text" id="titulo" name="titulo" class="form-control" value="<%=laux.getTitulo() %>" maxlength="45" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="director"><b>Director</b></label>
-				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" >
+				<input type="text" id="director" name="director" class="form-control" value="<%=laux.getdirector() %>" maxlength="45" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="anyo"><b>Año</b></label>
-				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" >
+				<input type="number" id="anyo" name="anyo" class="form-control" value="<%=laux.getanyo() %>" maxlength="4" required>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="sinopsis"><b>Sinopsis</b></label>
-				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control"><%=laux.getSinopsis() %></textarea>
+				<textarea rows="4" id="sinopsis" name="sinopsis" class="form-control" maxlength="500"><%=laux.getSinopsis() %></textarea>
 			</div>
 			<div class="form-group">
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
 					style="width: 250px;height: 371px">
 				<label class="control-label" for="portada"></label>
-				<input type="file" id="portada" name="portada" class="form-control"">
+				<input type="file" id="portada" name="portada" class="form-control" accept="image/*" required>
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-block" value="Editar" style="background-color:#8258FA; border-color:#8258FA;">

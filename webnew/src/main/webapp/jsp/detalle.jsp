@@ -1,3 +1,5 @@
+<%@page import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
+<%@page import="java.util.List"%>
 <%@page import="es.cj.bean.Libro"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.dao.LibroDAO"%>
@@ -51,6 +53,7 @@ img {
 
 				LibroDAO lDAO = new LibroDAOImpl();
 				Libro laux = lDAO.obtenerLibroPorUUID(con, (String) request.getParameter("uuid"));
+				
 		%>
 
 		<ol class="breadcrumb">
