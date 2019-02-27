@@ -2,7 +2,7 @@ package es.cj.bean;
 
 import java.io.Serializable;
 
-public class Libro implements Serializable {
+public class Pelicula implements Serializable {
 
 	private int idPelicula;
 	private String titulo;
@@ -13,11 +13,11 @@ public class Libro implements Serializable {
 	private int idUsuario;
 	private String sinopsis;
 	
-	public Libro() {
+	public Pelicula() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Libro(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
+	public Pelicula(String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
 		super();
 		this.titulo = titulo;
 		this.director = director;
@@ -28,7 +28,7 @@ public class Libro implements Serializable {
 		this.sinopsis = sinopsis;
 	}
 
-	public Libro(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
+	public Pelicula(int idPelicula, String titulo, String director, int anyo, byte[] portada, String uuid, int idUsuario, String sinopsis) {
 		super();
 		this.idPelicula = idPelicula;
 		this.titulo = titulo;
@@ -106,7 +106,7 @@ public class Libro implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Libro [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo
+		return "Pelicula [idPelicula=" + idPelicula + ", titulo=" + titulo + ", director=" + director + ", anyo=" + anyo
 				+ ", uuid=" + uuid + ", idUsuario=" + idUsuario + ", sinopsis=" + sinopsis + "]";
 	}
 	 

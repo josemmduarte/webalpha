@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.cj.bean.Conexion;
-import es.cj.bean.Libro;
+import es.cj.bean.Pelicula;
 import es.cj.bean.Usuario;
 
 public class LibroDAOImpl implements LibroDAO {
 
-	public List<Libro> listar(Conexion c, Usuario u) {
-		List<Libro> peliculas = new ArrayList<Libro>();
+	public List<Pelicula> listar(Conexion c, Usuario u) {
+		List<Pelicula> peliculas = new ArrayList<Pelicula>();
 		
 		String sql = "SELECT * FROM peliculas WHERE idUsuario = ?";
 		try {
@@ -21,7 +21,7 @@ public class LibroDAOImpl implements LibroDAO {
 			sentencia.setInt(1, u.getIdUsuario());
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
-				Libro auxiliar = new Libro(
+				Pelicula auxiliar = new Pelicula(
 						resultado.getInt("idPelicula"), 
 						resultado.getString("titulo"), 
 						resultado.getString("director"), 
@@ -69,7 +69,7 @@ public class LibroDAOImpl implements LibroDAO {
 		}
 	}
 
-	public void insertar(Conexion con, Libro lib) {
+	public void insertar(Conexion con, Pelicula lib) {
 		String sql = "INSERT INTO peliculas VALUES (null, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
@@ -88,8 +88,8 @@ public class LibroDAOImpl implements LibroDAO {
 		}
 	}
 
-	public Libro obtenerLibroPorUUID(Conexion con, String uuid) {
-		Libro laux = new Libro();
+	public Pelicula obtenerLibroPorUUID(Conexion con, String uuid) {
+		Pelicula laux = new Pelicula();
 		
 		String sql = "SELECT * FROM peliculas WHERE uuid = ?";
 		try {
@@ -97,7 +97,7 @@ public class LibroDAOImpl implements LibroDAO {
 			sentencia.setString(1, uuid);
 			ResultSet resultado = sentencia.executeQuery();
 			while (resultado.next()) {
-				laux = new Libro(
+				laux = new Pelicula(
 						resultado.getInt("idPelicula"), 
 						resultado.getString("titulo"), 
 						resultado.getString("director"), 
@@ -114,7 +114,7 @@ public class LibroDAOImpl implements LibroDAO {
 		return laux;
 	}
 
-	public void actualizar(Conexion con, Libro lib) {
+	public void actualizar(Conexion con, Pelicula lib) {
 		try {
 			if (lib.getPortada() != null) {
 				String sql = "UPDATE peliculas SET titulo=?, director=?, anyo=?, portada=?, sinopsis=? WHERE uuid=?";

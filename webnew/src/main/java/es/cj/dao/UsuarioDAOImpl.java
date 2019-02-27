@@ -58,7 +58,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	public boolean existeEmail(String email, Conexion c) {
-boolean existe = false;
+		boolean existe = false;
 		
 		String sql = "SELECT * FROM usuarios WHERE email = ?";
 		try {

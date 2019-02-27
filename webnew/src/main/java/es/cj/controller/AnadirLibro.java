@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import es.cj.bean.Conexion;
-import es.cj.bean.Libro;
+import es.cj.bean.Pelicula;
 import es.cj.bean.Usuario;
 import es.cj.dao.LibroDAO;
 import es.cj.dao.LibroDAOImpl;
@@ -81,7 +81,7 @@ public class AnadirLibro extends HttpServlet {
 			ImageIO.write(buffered, "jpg", os);
 		}
 
-		Libro lib = new Libro(titulo, director, anyo, os.toByteArray(), uuid, idUsuario, sinopsis);
+		Pelicula lib = new Pelicula(titulo, director, anyo, os.toByteArray(), uuid, idUsuario, sinopsis);
 
 		LibroDAO lDAO = new LibroDAOImpl();
 

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import es.cj.bean.Conexion;
-import es.cj.bean.Libro;
+import es.cj.bean.Pelicula;
 import es.cj.bean.Usuario;
 import es.cj.dao.LibroDAO;
 import es.cj.dao.LibroDAOImpl;
@@ -65,7 +65,7 @@ public class EditarLibro extends HttpServlet {
 		InputStream inputS = null;
 		ByteArrayOutputStream os = null;
 
-		Libro lib = null;
+		Pelicula lib = null;
 
 		if (!getFileName(filePart).equals("")) {
 			inputS = filePart.getInputStream();
@@ -79,9 +79,9 @@ public class EditarLibro extends HttpServlet {
 			os = new ByteArrayOutputStream();
 			ImageIO.write(buffered, "jpg", os);
 
-			lib = new Libro(titulo, director, anyo, os.toByteArray(), uuid, idUsuario, sinopsis);
+			lib = new Pelicula(titulo, director, anyo, os.toByteArray(), uuid, idUsuario, sinopsis);
 		} else {
-			lib = new Libro(titulo, director, anyo, null, uuid, idUsuario, sinopsis);
+			lib = new Pelicula(titulo, director, anyo, null, uuid, idUsuario, sinopsis);
 		}
 
 		LibroDAO lDAO = new LibroDAOImpl();

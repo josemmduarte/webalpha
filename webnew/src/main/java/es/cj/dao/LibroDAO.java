@@ -3,20 +3,20 @@ package es.cj.dao;
 import java.util.List;
 
 import es.cj.bean.Conexion;
-import es.cj.bean.Libro;
+import es.cj.bean.Pelicula;
 import es.cj.bean.Usuario;
 
 public interface LibroDAO {
 
-	List<Libro> listar(Conexion c, Usuario u);
+	List<Pelicula> listar(Conexion c, Usuario u);
 	
 	byte [] obtenerPortada(Conexion c, int idPelicula);
 	
 	void borrar(Conexion c, String uuid);
 
-	void insertar(Conexion con, Libro lib);
+	void insertar(Conexion con, Pelicula lib);
 	
-	Libro obtenerLibroPorUUID(Conexion con, String uuid);
+	Pelicula obtenerLibroPorUUID(Conexion con, String uuid);
 
-	void actualizar(Conexion con, Libro lib);
+	void actualizar(Conexion con, Pelicula lib);
 }

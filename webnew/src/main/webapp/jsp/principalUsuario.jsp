@@ -1,4 +1,4 @@
-<%@page import="es.cj.bean.Libro"%>
+<%@page import="es.cj.bean.Pelicula"%>
 <%@page import="java.util.List"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.dao.LibroDAO"%>
@@ -47,18 +47,18 @@
 <body background="../imagenes/corn.png">
 	<%
 		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
-			response.sendRedirect("../index.jsp?mensaje=Error de sesión");
-		} else {
-			// Voy a capturar los datos del web.xml
-			ServletContext sc = getServletContext();
-			String usu = sc.getInitParameter("usuario");
-			String pass = sc.getInitParameter("password");
-			String driver = sc.getInitParameter("driver");
-			String bd = sc.getInitParameter("database");
-			// Crear un objeto de tipo Conexion con los datos anteriores
-			Conexion con = new Conexion(usu, pass, driver, bd);
-			LibroDAO lDAO = new LibroDAOImpl();
-			List<Libro> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
+		response.sendRedirect("../index.jsp?mensaje=Error de sesión");
+			} else {
+		// Voy a capturar los datos del web.xml
+		ServletContext sc = getServletContext();
+		String usu = sc.getInitParameter("usuario");
+		String pass = sc.getInitParameter("password");
+		String driver = sc.getInitParameter("driver");
+		String bd = sc.getInitParameter("database");
+		// Crear un objeto de tipo Conexion con los datos anteriores
+		Conexion con = new Conexion(usu, pass, driver, bd);
+		LibroDAO lDAO = new LibroDAOImpl();
+		List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
 	%>
 	<div class="container">
 
@@ -75,13 +75,20 @@
 			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
 		
+		
+		
+
+		
+		
+		
+		
 		<div class="row justify-content-center">
 			<img src="../imagenes/generatedtext.png">
 		</div>
 		
 		<div class="row col-md-12 text-center" >
 			<%
-				for (Libro l : peliculas) {
+				for (Pelicula l : peliculas) {
 			%>
 
 			<div class="card" style="margin: 10px; width: 252px;">

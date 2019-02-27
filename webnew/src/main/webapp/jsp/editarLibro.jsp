@@ -1,4 +1,4 @@
-<%@page import="es.cj.bean.Libro"%>
+<%@page import="es.cj.bean.Pelicula"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
 <%@page import="es.cj.dao.LibroDAO"%>
 <%@page import="es.cj.bean.Conexion"%>
@@ -25,9 +25,9 @@
 <body background="../imagenes/corn.png">
 	<div class="container">
 		<%
-		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
+			if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
 			response.sendRedirect("../index.jsp?mensaje=Error de sesión");
-		} else {
+				} else {
 			
 			// Conexión con la base de datos
 			// Voy a capturar los datos del web.xml
@@ -40,7 +40,7 @@
 			Conexion con = new Conexion(usu, pass, driver, bd);
 			
 			LibroDAO lDAO = new LibroDAOImpl();
-			Libro laux = lDAO.obtenerLibroPorUUID(con, (String)request.getParameter("uuid"));
+			Pelicula laux = lDAO.obtenerLibroPorUUID(con, (String)request.getParameter("uuid"));
 		%>
 		
 		<ol class="breadcrumb">
