@@ -4,7 +4,6 @@ import java.util.List;
 
 import es.cj.bean.Actor;
 import es.cj.bean.Conexion;
-import es.cj.bean.Pelicula;
 
 public interface ActorDAO {
 	
@@ -13,5 +12,9 @@ public interface ActorDAO {
 	
 	byte [] obtenerFoto(Conexion c, int idActores);
 	
-	Actor obtenerActorPoridActor(Conexion con, int idActores);
+	Actor obtenerActorPoruuid(Conexion con, String uuid);
+	
+	void borrar (Conexion c, String uuid);
+	
+	void insertar (Conexion con, Actor act);
 }

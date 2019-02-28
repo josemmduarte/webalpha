@@ -9,18 +9,30 @@ public class Actor implements Serializable {
 	private String papel;
 	private byte[] foto;
 	private int idPelicula;
+	private String uuid;
 	
 	public Actor() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Actor(int idActores, String nombre, String papel, byte[] foto, int idPelicula) {
+	public Actor(int idActores, String nombre, String papel, byte[] foto, int idPelicula, String uuid) {
 		super();
 		this.idActores = idActores;
 		this.nombre = nombre;
 		this.papel = papel;
 		this.foto = foto;
 		this.idPelicula = idPelicula;
+		this.uuid = uuid;
+	}
+	
+	
+	public Actor(String nombre, String papel, byte[] foto, int idPelicula, String uuid) {
+		super();
+		this.nombre = nombre;
+		this.papel = papel;
+		this.foto = foto;
+		this.idPelicula = idPelicula;
+		this.uuid = uuid;
 	}
 
 	public int getIdActores() {
@@ -62,11 +74,19 @@ public class Actor implements Serializable {
 	public void setIdPelicula(int idPelicula) {
 		this.idPelicula = idPelicula;
 	}
+	
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
 	@Override
 	public String toString() {
 		return "Actor [idActores=" + idActores + ", nombre=" + nombre + ", papel=" + papel + ", idPelicula="
-				+ idPelicula + "]";
+				+ idPelicula + ", uuid=" + uuid + "]";
 	}
 
 }

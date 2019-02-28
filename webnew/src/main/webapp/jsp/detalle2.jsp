@@ -34,6 +34,23 @@
 img {
 	float: left;
 	margin-right: 20px;
+	
+.modal {
+	text-align: center;
+}
+@media screen and (min-width: 768px) {
+	.modal:before {
+		display: inline-block;
+		vertical-align: middle;
+		content: " ";
+		height: 100%;
+	}
+}
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
 }
 </style>
 
@@ -56,26 +73,56 @@ img {
 				// Crear un objeto de tipo Conexion con los datos anteriores
 				Conexion con = new Conexion(usu, pass, driver, bd);
 				
-				
-				
 				ActorDAO aDAO = new ActorDAOImpl();
-				Actor aaux = aDAO.obtenerActorPoridActor(con, Integer.parseInt(request.getParameter("idActores")));
-				
+				Actor aaux = aDAO.obtenerActorPoruuid(con, (String) request.getParameter("uuid"));
 		%>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
+			<li class="breadcrumb-item"><a href="javascript:history.back()"> Pelicula</a></li>
 			<li class="breadcrumb-item"><a><%=aaux.getNombre()%></a></li>
-			<li class="breadcrumb-item">Editar Actor</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
+		
+		<img alt="foto"
+			src="image2.jsp?idActores=<%=aaux.getIdActores()%>"
+			style="width: 200px; height: 297px">
+			
+			<button type="button" class="btn btn-default" data-toggle="modal"
+						data-target="#modalBorrar<%=aaux.getIdActores()%>">Actualizar</button>
 			
 			<!-- Borrar -->
 			
-
+				<button type="button" class="btn btn-danger" data-toggle="modal"
+						data-target="#modalBorrar<%=aaux.getIdActores()%>">Borrar</button>
+					<!-- Modal -->
+					<div class="modal fade" id="modalBorrar<%=aaux.getIdActores()%>" tabindex="-1"
+						role="dialog" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel" style="color: red; font-weight: bold;">Borrar Actor</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">×</span> 
+									</button>
+								</div>
+								<div class="modal-body">
+									¿Desea borrar a: <%=aaux.getNombre() %>?
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">No</button>
+									<button type="button" class="btn btn-danger" 
+										onclick="location.href='../BorrarActor2?uuid=<%=aaux.getUuid()%>'">Sí</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
 			<%
 				}

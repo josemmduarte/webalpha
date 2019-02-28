@@ -100,9 +100,10 @@ img {
 
 		<button type="button" class="btn btn-primary btn-default"
 			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Editar Pelicula</button>
+			
+		<button type="button" class="btn btn-primary btn-default"
+			onclick="location.href='anadirActor.jsp?uuid=<%=laux.getUuid()%>'">Añadir Actor</button>
 		
-		<a href="anadirActor.jsp" class="btn btn-primary btn-xs btn-default" 
-			style="background-color:#8258FA; border-color:#8258FA;">Añadir Actor</a>
 
 		<div class="card"
 			style="margin: 10px; background-color: #D8CEF6; border: 0px;">
@@ -128,7 +129,7 @@ img {
 			%>
 				
 			<div class="card" style="margin: 10px; width: 100px; height: 150px; background-color: #BCA9F5; border-color: #BCA9F5">
-				<button type="button" class="btn btn-link" onclick="location.href='detalle2.jsp?IdActores=<%=a.getIdActores()%>'">
+				<button type="button" class="btn btn-link" onclick="location.href='detalle2.jsp?uuid=<%=a.getUuid()%>'">
 					<img alt="imagen de Actor" src="image2.jsp?idActores=<%=a.getIdActores()%>" 
 					class="card-img-top" style="width: 100px; height: 150px;">
 				</button>
