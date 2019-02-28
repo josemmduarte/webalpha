@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.UUID;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
@@ -25,39 +24,36 @@ import es.cj.dao.LibroDAO;
 import es.cj.dao.LibroDAOImpl;
 
 /**
- * Servlet implementation class AnadirLibro
+ * Servlet implementation class EditarActor
  */
 @MultipartConfig
-public class AnadirActor extends HttpServlet {
+public class EditarActor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EditarActor() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public AnadirActor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nombre = request.getParameter("nombre");
 		String papel = request.getParameter("papel");
-		String uuid = UUID.randomUUID().toString();
+		String uuid = request.getParameter("uuid");
 		
 			ServletContext sc = getServletContext();
 			String usu = sc.getInitParameter("usuario");
@@ -77,6 +73,9 @@ public class AnadirActor extends HttpServlet {
 
 		InputStream inputS = null;
 		ByteArrayOutputStream os = null;
+		
+		Actor act = null;
+		
 		if (!getFileName(filePart).equals("")) {
 			inputS = filePart.getInputStream();
 
@@ -88,13 +87,15 @@ public class AnadirActor extends HttpServlet {
 
 			os = new ByteArrayOutputStream();
 			ImageIO.write(buffered, "jpg", os);
+			
+			act = new Actor(nombre, papel, os.toByteArray(), idPelicula, uuid);
+		} else {
+			act = new Actor(nombre, papel, null, idPelicula, uuid);
 		}
 
-		Actor act = new Actor(nombre, papel, os.toByteArray(), idPelicula, uuid);
-		
 		ActorDAO aDAO = new ActorDAOImpl();
 		
-		aDAO.insertar(con, act);
+		aDAO.actualizar(con, act);
 		
 		response.sendRedirect("jsp/principalUsuario.jsp");
 	}

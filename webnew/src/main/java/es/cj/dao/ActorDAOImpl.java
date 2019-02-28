@@ -107,6 +107,32 @@ public class ActorDAOImpl implements ActorDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public void actualizar(Conexion con, Actor act) {
+		
+		try {
+			if (act.getFoto() != null) {
+				String sql = "UPDATE actores SET nombre=?, papel=?, foto=? WHERE uuid=?";
+				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+				sentencia.setString(1, act.getNombre());
+				sentencia.setString(2, act.getpapel());
+				sentencia.setBytes(3, act.getFoto());
+				sentencia.setString(4, act.getUuid());
+				sentencia.executeUpdate();
+			} else {
+				String sql = "UPDATE actores SET nombre=?, papel=? WHERE uuid=?";
+				PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+				sentencia.setString(1, act.getNombre());
+				sentencia.setString(2, act.getpapel());
+				sentencia.setString(3, act.getUuid());
+				sentencia.executeUpdate();
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 	
 }
 

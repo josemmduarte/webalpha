@@ -68,6 +68,18 @@
   	<description></description>
   	<servlet-class>es.cj.controller.BorrarActor2</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AnadirActor</servlet-name>
+  	<display-name>AnadirActor</display-name>
+  	<description></description>
+  	<servlet-class>es.cj.controller.AnadirActor</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditarActor</servlet-name>
+  	<display-name>EditarActor</display-name>
+  	<description></description>
+  	<servlet-class>es.cj.controller.EditarActor</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ValidarUsuario</servlet-name>
   	<url-pattern>/ValidarUsuario</url-pattern>
@@ -99,6 +111,14 @@
   <servlet-mapping>
   	<servlet-name>BorrarActor2</servlet-name>
   	<url-pattern>/BorrarActor2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AnadirActor</servlet-name>
+  	<url-pattern>/AnadirActor</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarActor</servlet-name>
+  	<url-pattern>/EditarActor</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

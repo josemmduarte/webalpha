@@ -17,4 +17,7 @@ public interface ActorDAO {
 	void borrar (Conexion c, String uuid);
 	
 	void insertar (Conexion con, Actor act);
+
+	void actualizar(Conexion con, Actor act);
+	
 }
