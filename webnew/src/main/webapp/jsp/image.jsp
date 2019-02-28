@@ -18,7 +18,8 @@
 			o.close();
 			return;
 		}
-	} catch (IllegalStateException e){
+	} catch (IllegalStateException e) {	
 	}
-} catch (Exception e){	
-}%>
+} catch (Exception e) {
+}
+%>

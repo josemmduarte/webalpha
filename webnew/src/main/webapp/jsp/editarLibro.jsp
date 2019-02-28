@@ -47,6 +47,7 @@
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
+			<li class="breadcrumb-item"><a href="detalle.jsp?uuid=<%=laux.getUuid()%>"><%=laux.getTitulo()%></a></li>
 			<li class="breadcrumb-item">Editar Pelicula</li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
@@ -79,7 +80,7 @@
 				<img alt="Portada" src="image.jsp?idPelicula=<%=laux.getidPelicula()%>" 
 					style="width: 250px;height: 371px">
 				<label class="control-label" for="portada"></label>
-				<input type="file" id="portada" name="portada" class="form-control" accept="image/*" required>
+				<input type="file" id="portada" name="portada" class="form-control" accept="image/*">
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-block" value="Editar" style="background-color:#8258FA; border-color:#8258FA;">

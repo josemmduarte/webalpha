@@ -1,4 +1,8 @@
-<%@page import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
+<%@page import="es.cj.bean.Actor"%>
+<%@page import="es.cj.dao.ActorDAOImpl"%>
+<%@page import="es.cj.dao.ActorDAO"%>
+<%@page
+	import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
 <%@page import="java.util.List"%>
 <%@page import="es.cj.bean.Pelicula"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
@@ -53,14 +57,19 @@ img {
 
 				LibroDAO lDAO = new LibroDAOImpl();
 				Pelicula laux = lDAO.obtenerLibroPorUUID(con, (String) request.getParameter("uuid"));
+
+				ActorDAO aDAO = new ActorDAOImpl();
+				List<Actor> actores = aDAO.listar(con, laux.getidPelicula());
+				//List<Actor> actores = aDAO.listar(con, Integer.parseInt(request.getParameter("idPelicula")));
 		%>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
-			<li class="breadcrumb-item"><%=laux.getTitulo()%></li>
+			
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal
 					Usuario</a></li>
+			<li class="breadcrumb-item"><%=laux.getTitulo()%></li>
 			<li class="breadcrumb-item text-danger"><a
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
@@ -77,7 +86,7 @@ img {
 			style="width: 250px; height: 371px">
 
 		<form class="star">
-			<p class="clasificacion">
+			<p class="clasificacion" style="margin: 0;">
 				<input id="radio1" type="radio" name="estrellas" value="5">
 				<label for="radio1">&#9733;</label> <input id="radio2" type="radio"
 					name="estrellas" value="4"> <label for="radio2">&#9733;</label>
@@ -89,31 +98,55 @@ img {
 			</p>
 		</form>
 
+		<button type="button" class="btn btn-primary btn-default"
+			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Editar Pelicula</button>
+		
+		<a href="anadirActor.jsp" class="btn btn-primary btn-xs btn-default" 
+			style="background-color:#8258FA; border-color:#8258FA;">Añadir Actor</a>
+
 		<div class="card"
 			style="margin: 10px; background-color: #D8CEF6; border: 0px;">
-			<h4>
+			<h5>
 				<b>Director:</b>
-				<%=laux.getdirector()%></h4>
-			<h4>
+				<%=laux.getdirector()%></h5>
+			<h5>
 				<b>Año:</b>
-				<%=laux.getanyo()%></h4>
-			<h4>
+				<%=laux.getanyo()%></h5>
+			<h5>
 				<b>Sinopsis:</b>
-				<%=laux.getSinopsis()%></h4>
+				<%=laux.getSinopsis()%></h5>
 		</div>
 
-		<button type="button" class="btn btn-default"
-			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Actualizar</button>
-			
-		<%
-			}
-		%>
+		<br><br>
+		<h5 class="row col-md-12"><b>Reparto:</b></h5>
 
-	</div>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="../js/jquery-3.3.1.slim.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+		<!-- Actores -->
+		
+		<div class="row col-md-12 text-center">
+			<% 
+			for (Actor a:actores){
+			%>
+				
+			<div class="card" style="margin: 10px">
+				<img alt="imagen de Actor" src="image2.jsp?idActores=<%=a.getIdActores()%>" 
+				class="card-img-top" style="width: 70px; height: 120px;">
+			</div>
+			
+			<% 
+			}
+			%>
+		</div>
+				
+		<!-- Fin Actores -->
+			<%
+				}
+			%>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="../js/jquery-3.3.1.slim.min.js"></script>
+		<script src="../js/popper.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -75,13 +75,6 @@
 			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
 		
-		
-		
-
-		
-		
-		
-		
 		<div class="row justify-content-center">
 			<img src="../imagenes/generatedtext.png">
 		</div>
@@ -96,19 +89,14 @@
 					<img alt="imagen de libro" src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
 					style="width: 250px;height: 371px">
 				</button>
-				<div class="card-body">
-					<!--   <h5 class="card-title"><%=l.getTitulo()%></h5>
-						 <p class="card-text"><%=l.getdirector()%></p>
-					 	<p class="card-text">
-						 <small class="text-muted"><%=l.getanyo()%></small>
-						</p> -->
+				<!-- <div class="card-body">  -->
 					
 					<p><b><%=l.getTitulo() %></b></p>
 					
 					
 					<!--  <button type="button" class="btn btn-secondary" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
 					-->
-					<button type="button" class="btn btn-danger" data-toggle="modal" 
+					<button type="button" class="btn btn-danger" data-toggle="modal"
 						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
 					<!-- Modal -->
 					<div class="modal fade" id="modalBorrar<%=l.getidPelicula()%>" tabindex="-1"
@@ -120,7 +108,7 @@
 									<h5 class="modal-title" id="exampleModalLabel" style="color: red; font-weight: bold;">Borrar Pelicula</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
-										<span aria-hidden="true">×</span>
+										<span aria-hidden="true">×</span> 
 									</button>
 								</div>
 								<div class="modal-body">
@@ -135,7 +123,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 
 			<%
