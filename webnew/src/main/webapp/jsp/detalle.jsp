@@ -127,10 +127,13 @@ img {
 			for (Actor a:actores){
 			%>
 				
-			<div class="card" style="margin: 10px">
-				<img alt="imagen de Actor" src="image2.jsp?idActores=<%=a.getIdActores()%>" 
-				class="card-img-top" style="width: 70px; height: 120px;">
+			<div class="card" style="margin: 10px; width: 100px; height: 150px; background-color: #BCA9F5; border-color: #BCA9F5">
+				<button type="button" class="btn btn-link" onclick="location.href='detalle2.jsp?IdActores=<%=a.getIdActores()%>'">
+					<img alt="imagen de Actor" src="image2.jsp?idActores=<%=a.getIdActores()%>" 
+					class="card-img-top" style="width: 100px; height: 150px;">
+				</button>
 			</div>
+
 			
 			<% 
 			}

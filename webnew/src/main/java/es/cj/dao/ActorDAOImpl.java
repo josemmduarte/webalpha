@@ -8,6 +8,7 @@ import java.util.List;
 
 import es.cj.bean.Actor;
 import es.cj.bean.Conexion;
+import es.cj.bean.Pelicula;
 
 public class ActorDAOImpl implements ActorDAO {
 	List<Actor> actores = new ArrayList<Actor>();
@@ -52,5 +53,30 @@ public class ActorDAOImpl implements ActorDAO {
 		}
 		return imagen;
 	}
+
+	public Actor obtenerActorPoridActor(Conexion con, int idActores) {
+		Actor aaux = new Actor();
+		
+		String sql = "SELECT * FROM actores WHERE idActores = ?";
+		try {
+			PreparedStatement sentencia = con.getConector().prepareStatement(sql);
+			sentencia.setInt(1, idActores);
+			ResultSet resultado = sentencia.executeQuery();
+			while (resultado.next()) {
+				aaux = new Actor(
+						resultado.getInt("idActores"), 
+						resultado.getString("nombre"), 
+						resultado.getString("papel"), 
+						resultado.getBytes("foto"), 
+						resultado.getInt("idPelicula"));
+			}
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return aaux;
+	}
+	
 }
 
