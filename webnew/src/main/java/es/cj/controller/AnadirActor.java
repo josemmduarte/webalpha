@@ -18,11 +18,9 @@ import javax.servlet.http.Part;
 
 import es.cj.bean.Actor;
 import es.cj.bean.Conexion;
-import es.cj.bean.Pelicula;
 import es.cj.dao.ActorDAO;
 import es.cj.dao.ActorDAOImpl;
-import es.cj.dao.LibroDAO;
-import es.cj.dao.LibroDAOImpl;
+
 
 /**
  * Servlet implementation class AnadirLibro
@@ -58,19 +56,8 @@ public class AnadirActor extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String papel = request.getParameter("papel");
 		String uuid = UUID.randomUUID().toString();
-		
-			ServletContext sc = getServletContext();
-			String usu = sc.getInitParameter("usuario");
-			String pass = sc.getInitParameter("password");
-			String driver = sc.getInitParameter("driver");
-			String bd = sc.getInitParameter("database");
-			// Crear un objeto de tipo Conexion con los datos anteriores
-			Conexion con = new Conexion(usu, pass, driver, bd);
-			//
-			LibroDAO lDAO = new LibroDAOImpl();
-			Pelicula laux = lDAO.obtenerLibroPorUUID(con, (String) request.getParameter("uuid"));
-		
-		int idPelicula = laux.getidPelicula();
+			
+		int idPelicula = Integer.parseInt(request.getParameter("idPelicula"));
 		
 		// Portada
 		Part filePart = request.getPart("foto");
@@ -93,6 +80,13 @@ public class AnadirActor extends HttpServlet {
 		Actor act = new Actor(nombre, papel, os.toByteArray(), idPelicula, uuid);
 		
 		ActorDAO aDAO = new ActorDAOImpl();
+		
+		ServletContext sc = getServletContext();
+		String usu = sc.getInitParameter("usuario");
+		String pass = sc.getInitParameter("password");
+		String driver = sc.getInitParameter("driver");
+		String bd = sc.getInitParameter("database");
+		Conexion con = new Conexion(usu, pass, driver, bd);
 		
 		aDAO.insertar(con, act);
 		

@@ -75,6 +75,9 @@
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-block" value="Añadir" style="background-color:#8258FA; border-color:#8258FA;">
 			</div>
+			
+			<input id="idPelicula" type="hidden" name="idPelicula" value="<%=laux.getidPelicula()%>"/>
+			
 		</form>
 		
 		<% } %>
