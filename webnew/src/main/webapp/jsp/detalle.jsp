@@ -66,7 +66,7 @@ img {
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
 			</li>
-			
+
 			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal
 					Usuario</a></li>
 			<li class="breadcrumb-item"><%=laux.getTitulo()%></li>
@@ -74,16 +74,18 @@ img {
 				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
 
-		<div class="row justify-content-center">
+		<div class="card"
+			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
 			<h1>
 				<b><%=laux.getTitulo()%></b>
 			</h1>
 		</div>
+
 		<hr>
 
 		<img alt="Portada"
 			src="image.jsp?idPelicula=<%=laux.getidPelicula()%>"
-			style="width: 250px; height: 371px">
+			style="width: 250px; height: 371px;">
 
 		<form class="star">
 			<p class="clasificacion" style="margin: 0;">
@@ -99,58 +101,60 @@ img {
 		</form>
 
 		<button type="button" class="btn btn-primary btn-default"
-			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Editar Pelicula</button>
-			
+			onclick="location.href='editarLibro.jsp?uuid=<%=laux.getUuid()%>'">Editar
+			Pelicula</button>
+
 		<button type="button" class="btn btn-primary btn-default"
-			onclick="location.href='anadirActor.jsp?uuid=<%=laux.getUuid()%>'">Añadir Actor</button>
-		
+			onclick="location.href='anadirActor.jsp?uuid=<%=laux.getUuid()%>'">Añadir
+			Actor</button>
 
-		<div class="card"
-			style="margin: 10px; background-color: #D8CEF6; border: 0px;">
-			<h5>
-				<b>Director:</b>
-				<%=laux.getdirector()%></h5>
-			<h5>
-				<b>Año:</b>
-				<%=laux.getanyo()%></h5>
-			<h5>
-				<b>Sinopsis:</b>
-				<%=laux.getSinopsis()%></h5>
-		</div>
 
-		<br><br>
-		<h5 class="row col-md-12"><b>Reparto:</b></h5>
+		<div class="card" style="margin: 10px; background-color: transparent; border: 0px;">
 
-		<!-- Actores -->
-		
-		<div class="row col-md-12 text-center">
-			<% 
-			for (Actor a:actores){
-			%>
-				
-			<div class="card" style="margin: 10px; width: 100px; height: 150px; background-color: #BCA9F5; border-color: #BCA9F5">
-				<button type="button" class="btn btn-link" onclick="location.href='detalle2.jsp?uuid=<%=a.getUuid()%>'">
-					<img alt="imagen de Actor" src="image2.jsp?idActores=<%=a.getIdActores()%>" 
-					class="card-img-top" style="width: 100px; height: 150px;">
-				</button>
+			<h5><b>Director: </b><%=laux.getdirector()%></h5>
+			
+			<h5><b>Año: </b><%=laux.getanyo()%></h5>
+			
+			<h5><b>Sinopsis:</b></h5><h5><%=laux.getSinopsis()%></h5>
+
+			<h5><b>Reparto:</b></h5>
+
+			<div class="row col-md-12 text-center">
+				<%
+					for (Actor a : actores) {
+				%>
+
+				<div class="card"
+					style="margin: 10px; width: 100px; height: 150px; background-color: #BCA9F5; border-color: #BCA9F5">
+					<button type="button" class="btn btn-link"
+						onclick="location.href='detalle2.jsp?uuid=<%=a.getUuid()%>'">
+						<img alt="imagen de Actor"
+							src="image2.jsp?idActores=<%=a.getIdActores()%>"
+							class="card-img-top" style="width: 100px; height: 150px;">
+					</button>
+				</div>
+
+
+				<%
+					}
+				%>
 			</div>
 
-			
-			<% 
-			}
-			%>
-		</div>
-				
-		<!-- Fin Actores -->
-			<%
-				}
-			%>
 		</div>
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="../js/jquery-3.3.1.slim.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
+		<br>
+
+		<%
+			}
+		%>
+	</div>
+
+	<br>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../js/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
