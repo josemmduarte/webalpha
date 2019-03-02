@@ -1812,7 +1812,7 @@ pre code {
   display: block;
   width: 100%;
   height: calc(2.25rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.371rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
@@ -1884,8 +1884,8 @@ select.form-control:focus::-ms-value {
 }
 
 .col-form-label {
-  padding-top: calc(0.375rem + 1px);
-  padding-bottom: calc(0.375rem + 1px);
+  padding-top: calc(0.371rem + 1px);
+  padding-bottom: calc(0.371rem + 1px);
   margin-bottom: 0;
   font-size: inherit;
   line-height: 1.5;
@@ -1908,8 +1908,8 @@ select.form-control:focus::-ms-value {
 .form-control-plaintext {
   display: block;
   width: 100%;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  padding-top: 0.371rem;
+  padding-bottom: 0.371rem;
   margin-bottom: 0;
   line-height: 1.5;
   color: #212529;
@@ -2297,7 +2297,7 @@ textarea.form-control {
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
+  padding: 0.371rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
@@ -3247,8 +3247,8 @@ input[type="button"].btn-block {
 }
 
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
-  padding-right: 0.375rem;
-  padding-left: 0.375rem;
+  padding-right: 0.371rem;
+  padding-left: 0.371rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
@@ -3413,7 +3413,7 @@ input[type="button"].btn-block {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0.375rem 0.75rem;
+  padding: 0.371rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: 400;
@@ -3598,7 +3598,7 @@ input[type="button"].btn-block {
   display: inline-block;
   width: 100%;
   height: calc(2.25rem + 2px);
-  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  padding: 0.371rem 1.75rem 0.371rem 0.75rem;
   line-height: 1.5;
   color: #495057;
   vertical-align: middle;
@@ -3639,15 +3639,15 @@ input[type="button"].btn-block {
 
 .custom-select-sm {
   height: calc(1.8125rem + 2px);
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  padding-top: 0.371rem;
+  padding-bottom: 0.371rem;
   font-size: 75%;
 }
 
 .custom-select-lg {
   height: calc(2.875rem + 2px);
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  padding-top: 0.371rem;
+  padding-bottom: 0.371rem;
   font-size: 125%;
 }
 
@@ -3692,7 +3692,7 @@ input[type="button"].btn-block {
   left: 0;
   z-index: 1;
   height: calc(2.25rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.371rem 0.75rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -3708,7 +3708,7 @@ input[type="button"].btn-block {
   z-index: 3;
   display: block;
   height: 2.25rem;
-  padding: 0.375rem 0.75rem;
+  padding: 0.371rem 0.75rem;
   line-height: 1.5;
   color: #495057;
   content: "Browse";
@@ -4408,7 +4408,7 @@ input[type="button"].btn-block {
 }
 
 .card-subtitle {
-  margin-top: -0.375rem;
+  margin-top: -0.371rem;
   margin-bottom: 0;
 }
 

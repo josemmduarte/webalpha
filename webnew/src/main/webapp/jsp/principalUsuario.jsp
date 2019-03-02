@@ -87,7 +87,7 @@
 			<div class="card" style="margin: 10px; width: 252px;">
 				<button type="button" class="btn btn-link" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">
 					<img alt="imagen de libro" src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
-					style="width: 250px;height: 371px">
+					style="width: 225px;height: 333px;">
 				</button>
 				<!-- <div class="card-body">  -->
 					
