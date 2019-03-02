@@ -97,7 +97,7 @@ public class EditarActor extends HttpServlet {
 		
 		aDAO.actualizar(con, act);
 		
-		response.sendRedirect("jsp/principalUsuario.jsp");
+		response.sendRedirect("jsp/detalle2.jsp?uuid="+uuid);
 	}
 
 	private String getFileName(Part filePart) {

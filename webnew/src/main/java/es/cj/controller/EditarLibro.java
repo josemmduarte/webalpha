@@ -99,7 +99,7 @@ public class EditarLibro extends HttpServlet {
 
 		lDAO.actualizar(con, lib);
 
-		response.sendRedirect("jsp/principalUsuario.jsp");
+		response.sendRedirect("jsp/detalle.jsp?uuid="+uuid);
 	}
 
 	private String getFileName(Part filePart) {
