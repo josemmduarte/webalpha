@@ -17,7 +17,7 @@
 
 <title>Registrar</title>
 </head>
-<body>
+<body background="../imagenes/corn.png">
 	<div class="container">
 	
 		<ol class="breadcrumb">
@@ -26,7 +26,8 @@
 				<a href="../index.jsp">Pagina de Inicio</a></li>
 		</ol>
 	
-		<div class="row justify-content-center">
+		<div class="card"
+			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
 			<h1><b>Registro</b></h1>
 		</div>
 		<div class="row justify-content-center">

@@ -61,23 +61,26 @@
 		List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
 	%>
 	<div class="container">
-
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
-			</li>
-			<li class="breadcrumb-item">Principal Usuario</li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
+	
+		<br>
+		<div class="row justify-content-center">
+			<img src="../imagenes/img2.png">
+		</div>
+		<div class="row justify-content-center">
+			<img src="../imagenes/img3.png">
+		</div>
 		
+		<br>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%></li>
+			<li class="breadcrumb-item">Principal Usuario</li>
+			<li class="breadcrumb-item text-danger"><a href="../CerrarSesion"> Cerrar Sesión </a></li>
+		</ol>
+
 		<p>
 			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" 
 			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
 		</p>
-		
-		<div class="row justify-content-center">
-			<img src="../imagenes/generatedtext.png">
-		</div>
 		
 		<div class="row col-md-12 text-center" >
 			<%
@@ -131,7 +134,7 @@
 			%>
 		</div>
 
-		<br><br><br>
+		<br><br>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Principal Usuario</li>

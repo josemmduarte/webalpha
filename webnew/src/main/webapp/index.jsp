@@ -11,17 +11,18 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<title>PlanetDeviluke</title>
+<title>El9Pasajero</title>
 </head>
 <body background="imagenes/corn.png">
 		<div class="row justify-content-center" style="padding-top: 100px;">
-			<img src="imagenes/generatedtext.png">
+			<img src="imagenes/img2.png">
+		</div>
+		<div class="row justify-content-center">
+			<img src="imagenes/img3.png">
 		</div>
 		<br>
 	<div class="container" Style="background-color: #9F81F7;
 	height: 340px; width: 400px; border-radius: 55px; padding-top: 50px;">
-		
-		
 
 		<div class="row justify-content-center">
 			<form role="form" method="post" action="ValidarUsuario">
@@ -35,7 +36,7 @@
 						class="form-control" id="password" name="password"
 						required="required">
 				</div>
-				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i> Enviar</button>
+				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i>Entrar</button>
 				<button type="button" class="btn btn-secondary" onclick="location.href='jsp/registrar.jsp'"><i class="fas fa-user-plus"></i> Registrar</button>
 			</form>
 

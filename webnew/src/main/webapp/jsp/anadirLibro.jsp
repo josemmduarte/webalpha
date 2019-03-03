@@ -37,7 +37,8 @@
 				
 		</ol>
 	
-		<div class="row justify-content-center">
+		<div class="card"
+			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
 			<h1><b>Añadir Pelicula</b></h1>
 		</div>
 		
