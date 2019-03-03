@@ -63,7 +63,7 @@ public class Registrar extends HttpServlet {
 				int filas = uDAO.insertar(usuario, con);
 				if (filas == 1) {
 					// Correcto
-					response.sendRedirect("jsp/registrar.jsp?mensaje=Usuario registrado correctamente");
+					response.sendRedirect("index.jsp?mensaje=Usuario registrado correctamente");
 				} else {
 					response.sendRedirect("jsp/registrar.jsp?mensaje=Error al registrar al usuario");
 				}

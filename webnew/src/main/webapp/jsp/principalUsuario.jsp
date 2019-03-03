@@ -5,7 +5,7 @@
 <%@page import="es.cj.bean.Conexion"%>
 <%@page import="es.cj.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-		pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,6 +26,7 @@
 .modal {
 	text-align: center;
 }
+
 @media screen and (min-width: 768px) {
 	.modal:before {
 		display: inline-block;
@@ -34,12 +35,12 @@
 		height: 100%;
 	}
 }
+
 .modal-dialog {
 	display: inline-block;
 	text-align: left;
 	vertical-align: middle;
 }
-
 </style>
 
 <title>Principal Usuario</title>
@@ -47,21 +48,21 @@
 <body background="../imagenes/corn.png">
 	<%
 		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
-		response.sendRedirect("../index.jsp?mensaje=Error de sesión");
-			} else {
-		// Voy a capturar los datos del web.xml
-		ServletContext sc = getServletContext();
-		String usu = sc.getInitParameter("usuario");
-		String pass = sc.getInitParameter("password");
-		String driver = sc.getInitParameter("driver");
-		String bd = sc.getInitParameter("database");
-		// Crear un objeto de tipo Conexion con los datos anteriores
-		Conexion con = new Conexion(usu, pass, driver, bd);
-		LibroDAO lDAO = new LibroDAOImpl();
-		List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
+			response.sendRedirect("../index.jsp?mensaje=Error de sesión");
+		} else {
+			// Voy a capturar los datos del web.xml
+			ServletContext sc = getServletContext();
+			String usu = sc.getInitParameter("usuario");
+			String pass = sc.getInitParameter("password");
+			String driver = sc.getInitParameter("driver");
+			String bd = sc.getInitParameter("database");
+			// Crear un objeto de tipo Conexion con los datos anteriores
+			Conexion con = new Conexion(usu, pass, driver, bd);
+			LibroDAO lDAO = new LibroDAOImpl();
+			List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
 	%>
 	<div class="container">
-	
+
 		<br>
 		<div class="row justify-content-center">
 			<img src="../imagenes/img2.png">
@@ -69,63 +70,68 @@
 		<div class="row justify-content-center">
 			<img src="../imagenes/img3.png">
 		</div>
-		
+
 		<br>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%></li>
 			<li class="breadcrumb-item">Principal Usuario</li>
-			<li class="breadcrumb-item text-danger"><a href="../CerrarSesion"> Cerrar Sesión </a></li>
+			<li class="breadcrumb-item text-danger"><a
+				href="../CerrarSesion"> Cerrar Sesión </a></li>
 		</ol>
 
 		<p>
-			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block" 
-			style="background-color:#8258FA; border-color:#8258FA;">Añadir Pelicula</a>
+			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block"
+				style="background-color: #8258FA; border-color: #8258FA;">Añadir
+				Pelicula</a>
 		</p>
-		
-		<div class="row col-md-12 text-center" >
+
+		<div class="row col-md-12 text-center">
 			<%
 				for (Pelicula l : peliculas) {
 			%>
 
 			<div class="card" style="margin: 10px; width: 252px;">
-				<button type="button" class="btn btn-link" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">
-					<img alt="imagen de libro" src="image.jsp?idPelicula=<%=l.getidPelicula()%>" class="card-img-top"
-					style="width: 225px;height: 333px;">
+				<button type="button" class="btn btn-link"
+					onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">
+					<img alt="imagen de libro"
+						src="image.jsp?idPelicula=<%=l.getidPelicula()%>"
+						class="card-img-top" style="width: 225px; height: 333px;">
 				</button>
 				<!-- <div class="card-body">  -->
-					
-					<p><b><%=l.getTitulo() %></b></p>
-					
-					
-					<!--  <button type="button" class="btn btn-secondary" onclick="location.href='detalle.jsp?uuid=<%=l.getUuid()%>'">Detalle</button>
-					-->
-					<button type="button" class="btn btn-danger" data-toggle="modal"
-						data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
-					<!-- Modal -->
-					<div class="modal fade" id="modalBorrar<%=l.getidPelicula()%>" tabindex="-1"
-						role="dialog" aria-labelledby="exampleModalLabel"
-						aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel" style="color: red; font-weight: bold;">Borrar Pelicula</h5>
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">×</span> 
-									</button>
-								</div>
-								<div class="modal-body">
-									¿Desea borrar la Pelicula: <%=l.getTitulo() %>?
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary"
-										data-dismiss="modal">No</button>
-									<button type="button" class="btn btn-danger" 
-										onclick="location.href='../BorrarLibro?uuid=<%=l.getUuid()%>'">Sí</button>
-								</div>
+
+				<p>
+					<b><%=l.getTitulo()%></b>
+				</p>
+
+				<button type="button" class="btn btn-danger" data-toggle="modal"
+					data-target="#modalBorrar<%=l.getidPelicula()%>">Borrar</button>
+				<!-- Modal -->
+				<div class="modal fade" id="modalBorrar<%=l.getidPelicula()%>"
+					tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel"
+									style="color: red; font-weight: bold;">Borrar Pelicula</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								¿Desea borrar la Pelicula:
+								<%=l.getTitulo()%>?
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">No</button>
+								<button type="button" class="btn btn-danger"
+									onclick="location.href='../BorrarLibro?uuid=<%=l.getUuid()%>'">Sí</button>
 							</div>
 						</div>
 					</div>
+				</div>
 				<!-- </div> -->
 			</div>
 
@@ -134,7 +140,7 @@
 			%>
 		</div>
 
-		<br><br>
+		<br> <br>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Principal Usuario</li>
@@ -146,7 +152,7 @@
 			}
 		%>
 	</div>
-	
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../js/jquery-3.3.1.slim.min.js"></script>

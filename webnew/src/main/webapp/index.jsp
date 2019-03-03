@@ -20,6 +20,7 @@
 		<div class="row justify-content-center">
 			<img src="imagenes/img3.png">
 		</div>
+		
 		<br>
 	<div class="container" Style="background-color: #9F81F7;
 	height: 340px; width: 400px; border-radius: 55px; padding-top: 50px;">
@@ -39,7 +40,7 @@
 				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i>Entrar</button>
 				<button type="button" class="btn btn-secondary" onclick="location.href='jsp/registrar.jsp'"><i class="fas fa-user-plus"></i> Registrar</button>
 			</form>
-
+	
 		</div>
 	</div>
 	
@@ -64,7 +65,7 @@
 				}
 			%>
 		</div>
-
+		
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery-3.3.1.slim.min.js"></script>

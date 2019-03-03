@@ -25,7 +25,6 @@ public class Actor implements Serializable {
 		this.uuid = uuid;
 	}
 	
-	
 	public Actor(String nombre, String papel, byte[] foto, int idPelicula, String uuid) {
 		super();
 		this.nombre = nombre;
