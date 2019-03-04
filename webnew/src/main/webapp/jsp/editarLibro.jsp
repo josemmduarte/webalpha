@@ -43,19 +43,15 @@
 			Pelicula laux = lDAO.obtenerLibroPorUUID(con, (String)request.getParameter("uuid"));
 		%>
 		
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
-			</li>
-			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal Usuario</a></li>
-			<li class="breadcrumb-item"><a href="detalle.jsp?uuid=<%=laux.getUuid()%>"><%=laux.getTitulo()%></a></li>
-			<li class="breadcrumb-item">Editar Pelicula</li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
-	
-		<div class="card"
-			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
-			<h1><b>Editar Libro</b></h1>
+		
+		<br>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block" style="background-color: #8258FA; border-color: #8258FA;">
+				<li><b>Editar Pelicula <%=laux.getTitulo()%></b></li>
+				<li><a href="principalUsuario.jsp">Principal Usuario</a></li>
+				<li><a href="detalle.jsp?uuid=<%=laux.getUuid()%>"><%=laux.getTitulo()%></a></li>
+				<li><a href="../CerrarSesion">Cerrar Sesión</a></li>
+			</ul>
 		</div>
 		
 		<hr>

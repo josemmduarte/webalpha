@@ -1,8 +1,7 @@
 <%@page import="es.cj.bean.Actor"%>
 <%@page import="es.cj.dao.ActorDAOImpl"%>
 <%@page import="es.cj.dao.ActorDAO"%>
-<%@page
-	import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
+<%@page import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
 <%@page import="java.util.List"%>
 <%@page import="es.cj.bean.Pelicula"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
@@ -44,8 +43,6 @@ img {
 			if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
 				response.sendRedirect("../index.jsp?mensaje=Error de sesión");
 			} else {
-
-				// Conexión con la base de datos
 				// Voy a capturar los datos del web.xml
 				ServletContext sc = getServletContext();
 				String usu = sc.getInitParameter("usuario");
@@ -63,22 +60,14 @@ img {
 				//List<Actor> actores = aDAO.listar(con, Integer.parseInt(request.getParameter("idPelicula")));
 		%>
 
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
-			</li>
 
-			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal
-					Usuario</a></li>
-			<li class="breadcrumb-item"><%=laux.getTitulo()%></li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
-
-		<div class="card"
-			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
-			<h1>
-				<b><%=laux.getTitulo()%></b>
-			</h1>
+		<br>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block" style="background-color: #8258FA; border-color: #8258FA;">
+				<li><b><%=laux.getTitulo()%></b></li>
+				<li><a href="principalUsuario.jsp">Principal Usuario</a></li>
+				<li><a href="../CerrarSesion">Cerrar Sesión</a></li>
+			</ul>
 		</div>
 
 		<hr>

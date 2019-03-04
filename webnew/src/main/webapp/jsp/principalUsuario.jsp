@@ -1,6 +1,8 @@
 <%@page import="es.cj.bean.Pelicula"%>
 <%@page import="java.util.List"%>
 <%@page import="es.cj.dao.LibroDAOImpl"%>
+<%@page
+	import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
 <%@page import="es.cj.dao.LibroDAO"%>
 <%@page import="es.cj.bean.Conexion"%>
 <%@page import="es.cj.bean.Usuario"%>
@@ -46,23 +48,23 @@
 <title>Principal Usuario</title>
 </head>
 <body background="../imagenes/corn.png">
-	<%
-		if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
-			response.sendRedirect("../index.jsp?mensaje=Error de sesión");
-		} else {
-			// Voy a capturar los datos del web.xml
-			ServletContext sc = getServletContext();
-			String usu = sc.getInitParameter("usuario");
-			String pass = sc.getInitParameter("password");
-			String driver = sc.getInitParameter("driver");
-			String bd = sc.getInitParameter("database");
-			// Crear un objeto de tipo Conexion con los datos anteriores
-			Conexion con = new Conexion(usu, pass, driver, bd);
-			LibroDAO lDAO = new LibroDAOImpl();
-			List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
-	%>
 	<div class="container">
+		<%
+			if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
+				response.sendRedirect("../index.jsp?mensaje=Error de sesión");
+			} else {
+				// Voy a capturar los datos del web.xml
+				ServletContext sc = getServletContext();
+				String usu = sc.getInitParameter("usuario");
+				String pass = sc.getInitParameter("password");
+				String driver = sc.getInitParameter("driver");
+				String bd = sc.getInitParameter("database");
+				// Crear un objeto de tipo Conexion con los datos anteriores
+				Conexion con = new Conexion(usu, pass, driver, bd);
 
+				LibroDAO lDAO = new LibroDAOImpl();
+				List<Pelicula> peliculas = lDAO.listar(con, (Usuario) session.getAttribute("usuarioWeb"));
+		%>
 		<br>
 		<div class="row justify-content-center">
 			<img src="../imagenes/img2.png">
@@ -72,18 +74,14 @@
 		</div>
 
 		<br>
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%></li>
-			<li class="breadcrumb-item">Principal Usuario</li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
-
-		<p>
-			<a href="anadirLibro.jsp" class="btn btn-primary btn-xs btn-block"
-				style="background-color: #8258FA; border-color: #8258FA;">Añadir
-				Pelicula</a>
-		</p>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block"
+				style="background-color: #8258FA; border-color: #8258FA;">
+				<li><b>Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%></b></li>
+				<li><a href="anadirLibro.jsp">Añadir Pelicula</a></li>
+				<li><a href="../CerrarSesion">Cerrar Sesión</a></li>
+			</ul>
+		</div>
 
 		<div class="row col-md-12 text-center">
 			<%
@@ -142,11 +140,13 @@
 
 		<br> <br>
 
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Principal Usuario</li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block"
+				style="background-color: #8258FA; border-color: #8258FA;">
+				<li><a href="anadirLibro.jsp">Añadir Pelicula</a></li>
+				<li><a href="../CerrarSesion">Cerrar Sesión</a></li>
+			</ul>
+		</div>
 
 		<%
 			}

@@ -37,7 +37,7 @@
 						class="form-control" id="password" name="password"
 						required="required">
 				</div>
-				<button type="submit" class="btn btn-primary"><i class="fas fa-share-square"></i>Entrar</button>
+				<button type="submit" class="btn btn-default"><i class="fas fa-share-square"></i>Entrar</button>
 				<button type="button" class="btn btn-secondary" onclick="location.href='jsp/registrar.jsp'"><i class="fas fa-user-plus"></i> Registrar</button>
 			</form>
 	

@@ -22,19 +22,15 @@
 </head>
 <body background="../imagenes/corn.png">
 	<div class="container">
-
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Registro</li>
-			<li class="breadcrumb-item text-danger"><a href="../index.jsp">Pagina
-					de Inicio</a></li>
-		</ol>
-
-		<div class="card"
-			style="margin: 10px; text-align: center; background: #8258FA; color: white;">
-			<h1>
-				<b>Registro</b>
-			</h1>
+		
+		<br>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block" style="background-color: #8258FA; border-color: #8258FA;">
+				<li><b>Registro</b></li>
+				<li><a href="../index.jsp">Pagina de Inicio</a></li>
+			</ul>
 		</div>
+		
 		<div class="row justify-content-center">
 			<%
 				String error = request.getParameter("mensaje");

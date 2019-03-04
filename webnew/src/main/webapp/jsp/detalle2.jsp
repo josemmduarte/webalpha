@@ -67,8 +67,6 @@ img {
 			if (session.getAttribute("usuarioWeb") == null || session.isNew()) {
 				response.sendRedirect("../index.jsp?mensaje=Error de sesión");
 			} else {
-
-				// Conexión con la base de datos
 				// Voy a capturar los datos del web.xml
 				ServletContext sc = getServletContext();
 				String usu = sc.getInitParameter("usuario");
@@ -82,18 +80,17 @@ img {
 				Actor aaux = aDAO.obtenerActorPoruuid(con, (String) request.getParameter("uuid"));
 		%>
 
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Bienvenido <%=((Usuario) session.getAttribute("usuarioWeb")).getNombre()%>
-			</li>
-			<li class="breadcrumb-item"><a href="principalUsuario.jsp">Principal
-					Usuario</a></li>
-			<li class="breadcrumb-item"><a href="javascript:history.back()">
-					Pelicula</a></li>
-			<li class="breadcrumb-item"><a><%=aaux.getNombre()%></a></li>
-			<li class="breadcrumb-item text-danger"><a
-				href="../CerrarSesion"> Cerrar Sesión </a></li>
-		</ol>
 
+		<br>
+		<div id="navegador">
+			<ul class="btn btn-primary btn-xs btn-block" style="background-color: #8258FA; border-color: #8258FA;">
+				<li><b><%=aaux.getNombre()%></b></li>
+				<li><a href="javascript:history.back()">Volver a Pelicula</a></li>
+				<li><a href="principalUsuario.jsp">Principal Usuario</a></li>
+				<li><a href="../CerrarSesion">Cerrar Sesión</a></li>
+			</ul>
+		</div>
+		
 		<img alt="foto" src="image2.jsp?idActores=<%=aaux.getIdActores()%>"
 			style="width: 200px; height: 297px">
 
