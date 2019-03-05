@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 
 <script type="text/javascript" src="../js/validaciones.js"></script>
+<script type="text/javascript" src="../js/prueba2.js"></script>
+
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -37,7 +39,7 @@
 		</div>
 				
 		<hr>
-		<form class="form" method="post" action="../AnadirLibro" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+		<form class="form" method="post" action="../AnadirLibro" enctype="multipart/form-data" onsubmit="return prueba()">
 			<div class="form-group">
 				<label class="control-label" for="titulo"><b>Titulo</b></label>
 				<input type="text" id="titulo" name="titulo" class="form-control" maxlength="45" required>
@@ -56,7 +58,8 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="portada"><b>Portada</b></label>
-				<input type="file" id="portada" name="portada" class="form-control" accept="image/*" required>
+				<input type="file" id="portada" name="portada" class="form-control" accept="image/*">
+				<span id="spportada"></span>
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-block" value="Añadir" style="background-color:#8258FA; border-color:#8258FA;">
